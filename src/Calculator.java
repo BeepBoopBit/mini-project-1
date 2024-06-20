@@ -7,19 +7,19 @@ import java.util.Scanner;
 
 public class Calculator {
 
-    private static double add(double a, double b) {
+    private double add(double a, double b) {
         return a+b;
     }
 
-    private static double subtract(double a, double b){
+    private double subtract(double a, double b){
         return a-b;
     }
 
-    private static double multiply(double a, double b){
+    private double multiply(double a, double b){
         return a*b;
     }
 
-    private static double divide(double a, double b) throws Exception {
+    private double divide(double a, double b) throws Exception {
         try{
             return a/b;
         }catch (ArithmeticException e){
@@ -34,7 +34,7 @@ public class Calculator {
      * @return `double` that contains the result of the Input expression
      * @throws Exception
      */
-    private static double calculate_from_tree(Tree tree) throws Exception {
+    private double calculate_from_tree(Tree tree) throws Exception {
 
         // Create a checker for values
         Checker _checker = new Checker();
@@ -99,7 +99,7 @@ public class Calculator {
         return total;
     }
 
-    public static void main(String[] args){
+    public void start(){
 
         System.out.println("-----Calculator-----");
 
