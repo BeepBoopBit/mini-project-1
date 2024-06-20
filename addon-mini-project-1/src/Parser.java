@@ -68,6 +68,12 @@ public class Parser {
 
             // If it's a something else
             else {
+                boolean isDecimal = current_char == '.';
+                if(isDecimal){
+                    current_number += current_char;
+                    continue;
+                }
+
                 // Exception
                 throw new Exception("Exception at token: " + current_char);
             }
