@@ -1,77 +1,60 @@
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
-    public static void menuCalculator(){
-        boolean inInput = true;
-        Scanner my_scanner = new Scanner(System.in);
-        Calculator calc = new Calculator();
 
-        while(inInput){
-            System.out.println("---Input (type \"exit\" to exit)");
-            System.out.print(">");
-            String user_input = my_scanner.nextLine();
-
-            if(Objects.equals(user_input, "exit")){
-                inInput = false;
-            }else{
-                double result = calc.calculate(user_input);
-                System.out.println("The result is: " + result);
-            }
+    // Simplify asking for a number
+    public static double askForNumber(Scanner scanner) throws Exception {
+        System.out.print("> ");
+        try{
+            return Double.parseDouble(scanner.nextLine());
+        }catch(Exception e){
+            throw new Exception("Input Error");
         }
     }
 
-    public static void menuExamples(){
-        System.out.println("\n---------------------------");
-        System.out.println("Examples:");
-        System.out.println("1.) 1+2+3*4/6*2");
-        System.out.println("2.) 1 + 2 + 3 * 4 / 6 * 2");
-        System.out.println("Notes:");
-        System.out.println("* Doesn't support Parenthesis");
-        System.out.println("* Doesn't support negative numbers");
-        System.out.println("---------------------------\n");
-    }
+    public static void main(String[] args) throws Exception {
+
+        System.out.println("----------Calculator----------");
+        System.out.println("[!] Start entering a number");
+        System.out.println("[!] Enter anything else to exit the program");
 
 
-    public static void menu(){
-        System.out.println("-----Calculator-----");
+        Calculator calc         = new Calculator();
+        boolean inCalculator    = true;
+        Scanner scanner         = new Scanner(System.in);
 
-        // Main Loop
-        boolean in_calculator = true;
-        while(in_calculator){
+        double lhs      = 0,
+               rhs      = 0;
+        String operator = "";
 
-            // Menu
-            System.out.println("1. Start");
-            System.out.println("2. Examples/Help");
-            System.out.println("3. Exit");
+        // Get the first Number
+        try{
+            lhs = askForNumber(scanner);
+        }catch(Exception e){
+            // Return peacefully without the exception printing out
+            System.out.println("[!] Exiting....");
+            return;
+        }
 
-            // Get the user Input
-            System.out.print("> ");
-            Scanner my_scanner = new Scanner(System.in);
-            String user_input = my_scanner.nextLine();
+        while(inCalculator){
+            try{
+                rhs = askForNumber(scanner);
+            }catch(Exception e){
+                System.out.println("[!] Exiting....");
+                break;
+            }
 
-            switch(user_input){
-                case "1": {
-                    menuCalculator();
-                    break;
-                }
-                case "2":{
-                    menuExamples();
-                    break;
-                }
-                case "3":{
-                    in_calculator = false;
-                    break;
-                }
-                default:{
-                    System.out.println("[!] Invalid Input");
-                    break;
-                }
+            System.out.print("Enter an operation (+, -, *, /): ");
+            operator = scanner.nextLine();
+            switch(operator){
+                case "+": lhs=calc.add(lhs,rhs); break;
+                case "-": lhs=calc.sub(lhs,rhs); break;
+                case "*": lhs=calc.mul(lhs,rhs); break;
+                case "/": lhs=calc.div(lhs,rhs); break;
+                default: inCalculator = false; break;
             }
         }
-    }
 
-    public static void main(String[] args){
-        menu();
+        System.out.println("The total is: " + lhs);
     }
 }
