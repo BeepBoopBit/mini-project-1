@@ -31,7 +31,6 @@ public class Main {
         System.out.println("2.) 1 + 2 + 3 * 4 / 6 * 2");
         System.out.println("Notes:");
         System.out.println("* Doesn't support Parenthesis");
-        System.out.println("* Negative is not Fully Support yet for complex expressions");
         System.out.println("---------------------------\n");
     }
 

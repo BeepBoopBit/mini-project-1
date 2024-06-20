@@ -42,6 +42,7 @@ public class Calculator {
         // Recursively Traverse to the left until it's left value is not an operator
         double lhs = 0;
         try{
+            // Try if the left is a number
             lhs = Double.parseDouble(tree.left.value);
         }catch(Exception e){
             calculate_from_tree(tree.left);
@@ -50,20 +51,13 @@ public class Calculator {
         // Update LHS Value
         lhs = Double.parseDouble(tree.left.value);
 
-        // Traverse toward the Right branch
+        // Recursively traverse the right tree until its value is not an operator
         double rhs = 0;
         try{
             // Try if the right is a number
             rhs = Double.parseDouble(tree.right.value);
         }catch(Exception e){
-
-            // Recursively traverse the right tree until its value is not an operator
-            while (_checker.isAnOperator(tree.right.value.charAt(0))){
-                calculate_from_tree(tree.right);
-            }
-
-            // Update RHS
-            rhs = Double.parseDouble(tree.right.value);
+            calculate_from_tree(tree.right);
         }
 
         // Update RHS

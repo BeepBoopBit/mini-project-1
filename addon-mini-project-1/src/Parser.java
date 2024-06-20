@@ -75,14 +75,16 @@ public class Parser {
 
         }
 
-        boolean isNumber = _checker.isANumber(current_number.charAt(0));
-        if(isNumber){
+        try{
+            // Test if it's a number
+            double value = Double.parseDouble(current_number);
+
             // Insert the last value
             _tree.numericalInsert(current_number);
-            return;
+        }catch(Exception e){
+            throw new Exception("Not A Valid Input");
         }
 
-        throw new Exception("Not A Valid Input");
     }
 
     public Tree getTree(){
