@@ -9,10 +9,9 @@ public class Calculator {
         return a*b;
     }
     public double div(double a, double b){
-        try{
-            return a/b;
-        }catch (ArithmeticException e){
+        if(b == 0){
             throw new ArithmeticException("Can't Divide by zero");
         }
+        return a/b;
     }
 }

@@ -50,9 +50,18 @@ public class Main {
                 case "+": lhs=calc.add(lhs,rhs); break;
                 case "-": lhs=calc.sub(lhs,rhs); break;
                 case "*": lhs=calc.mul(lhs,rhs); break;
-                case "/": lhs=calc.div(lhs,rhs); break;
+                case "/": {
+                    try{
+                        lhs=calc.div(lhs,rhs);
+                    }catch(ArithmeticException e){
+                        System.out.println("[!] Retrying...");
+                    }
+                    break;
+                }
                 default: inCalculator = false; break;
             }
+
+            System.out.println("[/] Current Total: " + lhs);
         }
 
         System.out.println("The total is: " + lhs);
