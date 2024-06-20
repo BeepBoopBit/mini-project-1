@@ -16,7 +16,10 @@ public class Main {
                 inInput = false;
             }else{
                 double result = calc.calculate(user_input);
-                System.out.println("The result is: " + result);
+                if(result != Double.POSITIVE_INFINITY){
+                    System.out.println("The result is: " + result);
+
+                }
             }
         }
     }
@@ -28,7 +31,6 @@ public class Main {
         System.out.println("2.) 1 + 2 + 3 * 4 / 6 * 2");
         System.out.println("Notes:");
         System.out.println("* Doesn't support Parenthesis");
-        System.out.println("* Doesn't support negative numbers");
         System.out.println("---------------------------\n");
     }
 

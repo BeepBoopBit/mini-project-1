@@ -40,12 +40,15 @@ public class Calculator {
         Checker _checker = new Checker();
 
         // Recursively Traverse to the left until it's left value is not an operator
-        while(_checker.isAnOperator(tree.left.value.charAt(0))){
+        double lhs = 0;
+        try{
+            lhs = Double.parseDouble(tree.left.value);
+        }catch(Exception e){
             calculate_from_tree(tree.left);
         }
 
-        // We know that LHS is a number
-        double lhs = Double.parseDouble(tree.left.value);
+        // Update LHS Value
+        lhs = Double.parseDouble(tree.left.value);
 
         // Traverse toward the Right branch
         double rhs = 0;
@@ -63,6 +66,8 @@ public class Calculator {
             rhs = Double.parseDouble(tree.right.value);
         }
 
+        // Update RHS
+        rhs = Double.parseDouble(tree.right.value);
 
         // We know that the tree_value is an operator
         // Process the total value
@@ -107,7 +112,8 @@ public class Calculator {
             parser.parseString(expression);
             return calculate_from_tree(parser.getTree());
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println("[!] Not A Valid Input");
+            return Double.POSITIVE_INFINITY;
         }
     }
 }

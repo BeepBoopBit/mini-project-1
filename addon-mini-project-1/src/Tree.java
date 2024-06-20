@@ -65,7 +65,6 @@ public class Tree {
     }
 
     private void changeOperator(String data){
-
         // Create a new Tree for the current head
         Tree previousHead = new Tree(this.value);
 
