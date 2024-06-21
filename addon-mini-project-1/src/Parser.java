@@ -14,8 +14,10 @@ public class Parser {
 
         // Check if the first character is a sign
         boolean isPreviousOperator = _checker.isAnOperator(current_number.charAt(0));
-        int parenthesisCount = 0;
 
+        // update the tree state if the current_number is a parenthesis
+        // * this is done to ensure that expression starting with '(' will be process accordingly
+        int parenthesisCount = 0;
         if(current_number.equals("(")){
             parenthesisCount += 1;
             _tree.set_isProcessingParenthesis(true);
@@ -64,30 +66,29 @@ public class Parser {
                     current_number += current_char;
                 }
             }
-
             else if(isNumber){
                 current_number += current_char;
                 isPreviousOperator = false;
             }
-
             else if(isOpenParenthesis){
                 _tree.set_isProcessingParenthesis(true);
                 parenthesisCount += 1;
             }
-
             else if(isCloseParenthesis){
+
+                // If there's something inside the current_number, insert it to the tree
                 if(!current_number.isEmpty()){
                     _tree.numericalInsert(current_number);
                     current_number = "";
                 }
 
+                // Update the tree state
                 parenthesisCount -= 1;
                 if(parenthesisCount < 0){
                     throw new Exception("[!] Exception: Mismatched Parenthesis");
                 }
                 _tree.set_isProcessingParenthesis(false);
             }
-
             // If it's a something else
             else {
 
@@ -107,12 +108,15 @@ public class Parser {
             // Test if it's a number
             double value = Double.parseDouble(current_number);
 
-            // Insert the last value
+            // Insert the last value if it's
             _tree.numericalInsert(current_number);
         }catch(Exception e){
+
+            // If it's empty, then it's not an exception
             if(current_number.isEmpty()){
                 return;
             }
+
             throw new Exception("Not A Valid Input");
         }
 

@@ -36,8 +36,9 @@ public class Tree {
             Tree currentSubTree = _subtree.get(_currentSubtreeIndex-1);
             currentSubTree.right = new Tree(_subtree.get(_currentSubtreeIndex));
             _subtree.remove(_currentSubtreeIndex);
-
         }else{
+
+            // Change the head if it's empty to the latest subtree
             if(Objects.equals(this.value, "")){
                 this.value = _subtree.getFirst().value;
                 this.left = _subtree.getFirst().left;
@@ -46,6 +47,7 @@ public class Tree {
                 return;
             }
 
+            // Otherwise, find an available spot to the right branch and append it there
             Tree headTree = this;
             while(headTree.right != null){
                 headTree = headTree.right;
@@ -53,34 +55,19 @@ public class Tree {
 
             headTree.right = new Tree(_subtree.getFirst());
             _subtree = new ArrayList<>();
-            return;
         }
-
-        if (_currentSubtreeIndex == 0) {
-            Tree currentSubTree = _subtree.get(_currentSubtreeIndex-1);
-            Tree currentHead = this;
-            while(currentHead.right != null){
-                currentHead = currentHead.right;
-            }
-
-            try{
-                // If it's a number
-                double currentValue = Double.parseDouble(currentHead.value);
-                System.out.println("[!] Should never happen");
-            }catch(Exception e){
-                currentHead.right = currentSubTree;
-            }
-        }
-
     }
 
     public void set_isProcessingParenthesis(boolean state){
         _isProcessingParenthesis = state;
 
+        // add a new subtree if it's a new parenthesis
         if(_isProcessingParenthesis){
             _currentSubtreeIndex += 1;
             _subtree.add(new Tree());
-        }else{
+        }
+        // Otherwise, process it
+        else{
             processSubtree();
             _currentSubtreeIndex -= 1;
         }
@@ -88,11 +75,13 @@ public class Tree {
 
     public void numericalInsert(String data){
 
+        // Insert in subtree if processing a parenthesis
         if(_isProcessingParenthesis){
             _subtree.get(_currentSubtreeIndex).numericalInsert(data);
             return;
         }
 
+        // Otherwise, insert in the head
         if(Objects.equals(this.value, "")){
             this.value = data;
         }
@@ -109,6 +98,8 @@ public class Tree {
     }
 
     public void operatorInsert(String data){
+
+        // Insert in subtree if processing a parenthesis
         if(_isProcessingParenthesis){
             _subtree.get(_currentSubtreeIndex).operatorInsert(data);
             return;
@@ -117,7 +108,7 @@ public class Tree {
         try{
             // Try to parse the head value into a double
             // * This check is done for cases where mul(*) and div(/) is the first operation
-            // * because mul(*) and div(/) algorithm only replace the left, not changes the head
+            // * because mul(*) and div(/) implementation here only replace the left, not changes the head
             double myData = Double.parseDouble(this.value);
 
             // If it succeeded, change the head into an operator
@@ -137,10 +128,7 @@ public class Tree {
                 Tree newTree = new Tree(data);
                 newTree.left = this.right;
                 this.right = newTree;
-
-
             }
-
             // Change the head into a new operator
             else{
                 changeHead(data);
