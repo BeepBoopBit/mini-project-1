@@ -27,10 +27,16 @@ public class Main {
     public static void menuExamples(){
         System.out.println("\n---------------------------");
         System.out.println("Examples:");
-        System.out.println("1.) 1+2+3*4/6*2");
-        System.out.println("2.) 1 + 2 + 3 * 4 / 6 * 2");
-        System.out.println("Notes:");
-        System.out.println("* Doesn't support Parenthesis");
+        System.out.println("1.) 4/2*2 [Answer: 4]");    // 4
+        System.out.println("2.) 1+2+3*4/6*2 [Answer: 7]"); // 7
+        System.out.println("3.) 4/2*2+9 [Answer: 13]");  // 13
+        System.out.println("4.) 4/(2*2)+9 [Answer: 10]"); //10
+        System.out.println("5.) 4/2*(2+9) [Answer: 22]"); //22
+        System.out.println("6.) (2+9)-(9+3) [Answer: -1]"); // -1
+        System.out.println("7.) (3+(2+9)) [Answer: 14]"); // 14
+        System.out.println("8.) 2+(2-3)-5+(2*(4/2)) [Answer: 0]"); // 0
+        System.out.println("9.) 2.1+9.2*4/2 [Answer: 20.5]"); // 20.5
+        System.out.println("10.) -2.1+-9.2*-4/2 [Answer: 16.3]"); // 16.3
         System.out.println("---------------------------\n");
     }
 

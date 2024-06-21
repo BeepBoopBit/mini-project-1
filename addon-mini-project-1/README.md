@@ -36,15 +36,3 @@ Parse the expression into an Expression Tree used for obtaining the result.
 
 #### Tree
 A Tree Data structure implementation modified for Expression Tree.
-
-## Example Input
-Here are some example inputs for your reference:
-
-1. "1+2+3/4*2*9+8-2"
-2. "9 + 4+2 +10 - 8 * 3/2"
-
-## Limitation
-Limitation that haven't been implemented
-
-1. Currently Doesn't support Parenthesis
-2. No Decimal support
