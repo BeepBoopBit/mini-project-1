@@ -85,6 +85,8 @@ public class Main {
         System.out.println(calc.calculate("(2+9)-(9+3)")); // -1
         System.out.println(calc.calculate("(3+(2+9))")); // 14
         System.out.println(calc.calculate("2+(2-3)-5+(2*(4/2))")); // 0
+        System.out.println(calc.calculate("2.1+9.2*4/2")); // 20.5
+        System.out.println(calc.calculate("-2.1+-9.2*-4/2")); // 16.3
     }
 
     public static void main(String[] args){
