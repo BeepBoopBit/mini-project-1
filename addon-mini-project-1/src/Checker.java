@@ -8,6 +8,8 @@ public class Checker {
     enum CHECK_TYPE  {NUMBER, OPERATOR};
 
     private boolean constantChecker(char input, CHECK_TYPE type){
+
+        // Check the type of checking to be done
         String checkingString = "";
         switch(type){
             case NUMBER -> {
@@ -18,7 +20,7 @@ public class Checker {
             }
         }
 
-        // Find the string
+        // Find the input in the string
         for(int i = 0; i < checkingString.length(); ++i){
             if (input == checkingString.charAt(i)){
                 return true;

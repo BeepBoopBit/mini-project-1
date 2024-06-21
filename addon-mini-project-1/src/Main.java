@@ -52,6 +52,7 @@ public class Main {
             Scanner my_scanner = new Scanner(System.in);
             String user_input = my_scanner.nextLine();
 
+            // Process the user Input
             switch(user_input){
                 case "1": {
                     menuCalculator();

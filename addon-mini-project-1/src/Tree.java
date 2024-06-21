@@ -36,39 +36,34 @@ public class Tree {
 
     public void operatorInsert(String data){
         try{
-            // Try to parse the value into a double
+            // Try to parse the head value into a double
+            // * This check is done for cases where mul(*) and div(/) is the first operation
+            // * because mul(*) and div(/) algorithm only replace the left, not changes the head
             double myData = Double.parseDouble(this.value);
 
-            // If it succeed, change the head into an operator
-            changeOperator(data);
+            // If it succeeded, change the head into an operator
+            changeHead(data);
         }catch(Exception e){
 
             // Otherwise, check if it's multiplication or division for precedence
             if((Objects.equals(data, "*")) || (Objects.equals(data, "/"))){
-                // Create a new tree from the data (operator)
+                // If it's, replace the latest right branch into the new data
+                // and attaching the previous branch into the new right
                 Tree newTree = new Tree(data);
-
-                // Get the current right tree
-                Tree rhs = this.right;
-
-                // Put RHS to the newTree
-                newTree.left = rhs;
-
-                // Make the right branch the new tree
+                newTree.left = this.right;
                 this.right = newTree;
+            }
 
-            }else{
-                // Change the head into a new operator
-                changeOperator(data);
+            // Change the head into a new operator
+            else{
+                changeHead(data);
             }
         }
     }
 
-    private void changeOperator(String data){
-        // Create a new Tree for the current head
+    private void changeHead(String data){
+        // Create a new Tree for base on the current head with its values
         Tree previousHead = new Tree(this.value);
-
-        // Initialize its values
         previousHead.left = this.left;
         previousHead.right = this.right;
 
