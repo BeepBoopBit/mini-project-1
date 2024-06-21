@@ -74,7 +74,21 @@ public class Main {
         }
     }
 
+    // Some Sample Tests
+    public static void test(){
+        Calculator calc = new Calculator();
+        System.out.println(calc.calculate("4/2*2"));    // 4
+        System.out.println(calc.calculate("1+2+3*4/6*2")); // 7
+        System.out.println(calc.calculate("4/2*2+9"));  // 13
+        System.out.println(calc.calculate("4/(2*2)+9")); //10
+        System.out.println(calc.calculate("4/2*(2+9)")); //22
+        System.out.println(calc.calculate("(2+9)-(9+3)")); // -1
+        System.out.println(calc.calculate("(3+(2+9))")); // 14
+        System.out.println(calc.calculate("2+(2-3)-5+(2*(4/2))")); // 0
+    }
+
     public static void main(String[] args){
+        //test();
         menu();
     }
 }

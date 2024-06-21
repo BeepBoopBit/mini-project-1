@@ -43,4 +43,12 @@ public class Checker {
         return input == SPACE;
     }
 
+    public boolean isOpenParenthesis(char input){
+        return input == '(';
+    }
+
+    public boolean isCloseParenthesis(char input){
+        return input == ')';
+    }
+
 }

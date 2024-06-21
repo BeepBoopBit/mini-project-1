@@ -14,6 +14,13 @@ public class Parser {
 
         // Check if the first character is a sign
         boolean isPreviousOperator = _checker.isAnOperator(current_number.charAt(0));
+        int parenthesisCount = 0;
+
+        if(current_number.equals("(")){
+            parenthesisCount += 1;
+            _tree.set_isProcessingParenthesis(true);
+            current_number = "";
+        }
 
         // Loop through all the expression starting at index 1
         for(int i = 1; i < userExpression.length(); ++i){
@@ -27,7 +34,11 @@ public class Parser {
                 continue;
             }
 
-            // If it's an operator, push the current_number and the operator to the tree
+            // Handling Parenthesis
+            boolean isOpenParenthesis = _checker.isOpenParenthesis(current_char);
+            boolean isCloseParenthesis = _checker.isCloseParenthesis(current_char);
+
+            // Token Flags
             boolean isOperator = _checker.isAnOperator(current_char);
             boolean isNumber = _checker.isANumber(current_char);
             if(isOperator){
@@ -54,10 +65,27 @@ public class Parser {
                 }
             }
 
-            // If the character is number
             else if(isNumber){
                 current_number += current_char;
                 isPreviousOperator = false;
+            }
+
+            else if(isOpenParenthesis){
+                _tree.set_isProcessingParenthesis(true);
+                parenthesisCount += 1;
+            }
+
+            else if(isCloseParenthesis){
+                if(!current_number.isEmpty()){
+                    _tree.numericalInsert(current_number);
+                    current_number = "";
+                }
+
+                parenthesisCount -= 1;
+                if(parenthesisCount < 0){
+                    throw new Exception("[!] Exception: Mismatched Parenthesis");
+                }
+                _tree.set_isProcessingParenthesis(false);
             }
 
             // If it's a something else
@@ -82,6 +110,9 @@ public class Parser {
             // Insert the last value
             _tree.numericalInsert(current_number);
         }catch(Exception e){
+            if(current_number.isEmpty()){
+                return;
+            }
             throw new Exception("Not A Valid Input");
         }
 
