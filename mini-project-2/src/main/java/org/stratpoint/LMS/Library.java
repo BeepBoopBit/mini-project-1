@@ -1,5 +1,7 @@
 package org.stratpoint.LMS;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.stratpoint.Books.*;
 
 import java.util.Objects;
@@ -7,6 +9,7 @@ import java.util.Scanner;
 
 public class Library {
     private LibraryManagementSystem _lib = null;
+    private Logger logger = LoggerFactory.getLogger(Library.class);
 
     public Library(){
         _lib = new LibraryManagementSystem();
@@ -15,10 +18,12 @@ public class Library {
         _lib.addBook(new NonFiction("renz", "water banana", "123-45"));
         _lib.addBook(new NonFiction("renz", "water melon water", "123-45"));
         _lib.addBook(new Book("renz", "water", "123-45"));
+        logger.info("Default Initialize Books");
     }
 
     public Library(LibraryManagementSystem lib){
         _lib = lib;
+        logger.info("Manual Initialization of Books");
     }
 
     public void start() {

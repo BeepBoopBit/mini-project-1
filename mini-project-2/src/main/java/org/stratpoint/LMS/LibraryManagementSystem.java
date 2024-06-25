@@ -1,5 +1,7 @@
 package org.stratpoint.LMS;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.stratpoint.Books.Book;
 
 import java.util.ArrayList;
@@ -12,6 +14,7 @@ public class LibraryManagementSystem {
     private final ArrayList<Book> _books;
     private final Cache _cache;
     private HashMap<Book, Integer> _searchResult = null;
+    private final Logger logger = LoggerFactory.getLogger(LibraryManagementSystem.class);
 
     public LibraryManagementSystem() {
         _books = new ArrayList<>();
@@ -21,6 +24,7 @@ public class LibraryManagementSystem {
     public void addBook(Book newBook) {
         _cache.add(newBook);
         _books.add(newBook);
+        logger.info("Successfully Added new Book to the cache and list");
     }
 
     public void deleteBook(int index) throws ArrayIndexOutOfBoundsException {
@@ -34,6 +38,7 @@ public class LibraryManagementSystem {
         _books.get(index).setISBN(null);
         _books.get(index).setAuthor(null);
         _books.get(index).setTitle(null);
+        logger.warn("Deleting Information: Need to clean-up the cache");
 
         // Remove book
         _books.remove(index);
@@ -53,6 +58,7 @@ public class LibraryManagementSystem {
 
         // If there's nothing, return 0, otherwise, return the size
         if (_searchResult == null) {
+            logger.info("No Result found on Query: " + query);
             return 0;
         }
 

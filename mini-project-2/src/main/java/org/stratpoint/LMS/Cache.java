@@ -1,5 +1,7 @@
 package org.stratpoint.LMS;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.stratpoint.Books.Book;
 
 import java.util.ArrayList;
@@ -18,6 +20,7 @@ import java.util.Objects;
 public class Cache {
     // Contains all the words that are present in all the books
     private final HashMap<String, HashMap<Book, Integer>> _wordBank = new HashMap<>();
+    private final Logger logger = LoggerFactory.getLogger(Cache.class);
 
     /**
      * Add all the words present in the book to the _wordBank
@@ -49,6 +52,7 @@ public class Cache {
         // Add a new word if it's not
         if(!isExisting){
             _wordBank.put(word, new HashMap<>(){{put(ref,1);}});
+            logger.info("Added new word [{}] to the _wordBank", word);
         }
 
         // Otherwise, add 1 to the existing word if the book exists
@@ -60,6 +64,7 @@ public class Cache {
                 myHash.put(ref,1);
             }
         }
+
     }
 
     /**
@@ -83,6 +88,7 @@ public class Cache {
             if(Objects.equals(word, "&&")){
                 // Note: You only need one (&&) in the whole input to make this true
                 isOperationAND = true;
+                logger.info("Setting [AND] Operation in query: " + input);
                 continue;
             }
 
