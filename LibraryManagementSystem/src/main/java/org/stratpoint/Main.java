@@ -1,6 +1,6 @@
-package org.example;
+package org.stratpoint;
 
-import org.example.LMS.Library;
+import org.stratpoint.LMS.Library;
 
 public class Main {
 

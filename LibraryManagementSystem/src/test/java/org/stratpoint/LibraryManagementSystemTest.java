@@ -1,7 +1,7 @@
-package org.example;
+package org.stratpoint;
 
-import org.example.Books.Book;
-import org.example.LMS.LibraryManagementSystem;
+import org.stratpoint.Books.Book;
+import org.stratpoint.LMS.LibraryManagementSystem;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

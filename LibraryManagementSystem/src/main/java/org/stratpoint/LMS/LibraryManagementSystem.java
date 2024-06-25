@@ -1,6 +1,6 @@
-package org.example.LMS;
+package org.stratpoint.LMS;
 
-import org.example.Books.Book;
+import org.stratpoint.Books.Book;
 
 import java.util.ArrayList;
 import java.util.HashMap;

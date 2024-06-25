@@ -1,7 +1,7 @@
-package org.example;
+package org.stratpoint;
 
-import org.example.Books.Book;
-import org.example.LMS.Cache;
+import org.stratpoint.Books.Book;
+import org.stratpoint.LMS.Cache;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

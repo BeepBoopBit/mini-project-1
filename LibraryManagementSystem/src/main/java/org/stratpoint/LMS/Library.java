@@ -1,6 +1,6 @@
-package org.example.LMS;
+package org.stratpoint.LMS;
 
-import org.example.Books.*;
+import org.stratpoint.Books.*;
 
 import java.util.Objects;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package org.example.Books;
+package org.stratpoint.Books;
 
 public class Fiction extends Book {
     String _genre = "Fiction";
