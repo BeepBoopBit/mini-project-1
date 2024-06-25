@@ -23,7 +23,7 @@ public class Library {
         // Print the options for the menu
         menuBanner();
 
-        // Ask for user Input
+        // Process menu option
         boolean inMenu = true;
         while (inMenu) {
             System.out.print("> ");
@@ -72,13 +72,18 @@ public class Library {
         // Get the result from the _cache base on the query
         boolean isSearching = true;
         while (isSearching) {
+
+            // Get user Input
             System.out.print("> ");
             Scanner scanner = new Scanner(System.in);
             String userQuery = scanner.nextLine();
 
+            // Check if the user wants to stop
             if (Objects.equals(userQuery, "0")) {
                 break;
             }
+
+            // Try to search the library base on the query
             try {
                 int result = _lib.search(userQuery);
                 if (result == 0) {
@@ -115,8 +120,12 @@ public class Library {
         // Delete a book if it exists, otherwise, return
         Scanner scanner = new Scanner(System.in);
         try {
+
+            // Get User Input
             System.out.print("> ");
             int userInput = scanner.nextInt();
+
+            // If the user wants to cancel
             if (userInput == -1) {
                 return;
             }
