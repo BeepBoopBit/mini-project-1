@@ -63,28 +63,31 @@ public class LibraryManagementSystem {
         int count = 0;
         for (Book book : _books) {
             if (book.getISBN() == null) {
-                printPretty("[!] Found a Deleted Record in the Cache" );
+                System.out.println("[!] Found a Deleted Record in the Cache" );
                 continue;
             }
-            printPretty("[" + count++ + "]" + "\nISBN: " + book.getISBN() + "\nAuthor: " + book.getAuthor() + "\nTitle: " + book.getTitle());
+            printPretty(book, count);
+            count++;
         }
     }
 
     public void showResultAll() {
         int count = 0;
-        for (Book keys : _searchResult.keySet()) {
-            if (keys.getISBN() == null) {
-                printPretty("[!] Found a Deleted Record in the Cache" );
+        for (Book book: _searchResult.keySet()) {
+            if (book.getISBN() == null) {
+                System.out.println("[!] Found a Deleted Record in the Cache" );
                 continue;
             }
-            printPretty("[" + count++ + "]" + "\nISBN: " + keys.getISBN() + "\nAuthor: " + keys.getAuthor() + "\nTitle: " + keys.getTitle());
+            printPretty(book, count);
+            count++;
         }
     }
 
-    private void printPretty(String str) {
+    private void printPretty(Book book, int count) {
         final String decoration = "=".repeat(20);
         System.out.println(decoration);
-        System.out.println(str);
+        System.out.println("[" + count + "]");
+        book.prettyPrint();
         System.out.println(decoration);
     }
 
