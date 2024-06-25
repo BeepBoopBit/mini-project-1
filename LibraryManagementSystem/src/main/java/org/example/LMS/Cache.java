@@ -1,4 +1,6 @@
-package org.example;
+package org.example.LMS;
+
+import org.example.Books.Book;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,20 +25,14 @@ public class Cache {
      * @param ref The reference book to be processed. (Should be Shallow copy)
      */
     public void add(Book ref){
-        String title = ref.getTitle();
-        String author = ref.getAuthor();
-        String ISBN = ref.getISBN();
-        String[] titleWords = title.split(" ");
-        String[] authorWords = author.split(" ");
 
-        // Add Title, Author, and ISBN
-        for(String word: titleWords){
+        // Get the string that can be used for searching
+        String[] allInputs = ref.getAllString().split(" ");
+
+        // Add all the fields in the books
+        for(String word: allInputs){
             addWord(word, ref);
         }
-        for(String word: authorWords){
-            addWord(word, ref);
-        }
-        addWord(ISBN, ref);
     }
 
     /**

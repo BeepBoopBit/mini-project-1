@@ -1,21 +1,23 @@
-package org.example;
+package org.example.LMS;
+
+import org.example.Books.*;
 
 import java.util.Objects;
 import java.util.Scanner;
 
 public class Library {
-    LibraryManagementSystem _lib = null;
+    private LibraryManagementSystem _lib = null;
 
-    Library(){
+    public Library(){
         _lib = new LibraryManagementSystem();
-        _lib.addBook(new Book("renz", "water melon", "123-45"));
-        _lib.addBook(new Book("renz", "papaya water", "123-45"));
-        _lib.addBook(new Book("renz", "water banana", "123-45"));
-        _lib.addBook(new Book("renz", "water melon water", "123-45"));
+        _lib.addBook(new Fiction("renz", "water melon", "123-45"));
+        _lib.addBook(new NonFiction("renz", "papaya water", "123-45"));
+        _lib.addBook(new NonFiction("renz", "water banana", "123-45"));
+        _lib.addBook(new NonFiction("renz", "water melon water", "123-45"));
         _lib.addBook(new Book("renz", "water", "123-45"));
     }
 
-    Library(LibraryManagementSystem lib){
+    public Library(LibraryManagementSystem lib){
         _lib = lib;
     }
 

@@ -1,4 +1,6 @@
-package org.example;
+package org.example.LMS;
+
+import org.example.Books.Book;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Books;
 
 public class Book{
     private String ISBN = "";
@@ -33,5 +33,17 @@ public class Book{
 
     public void setAuthor(String author) {
         Author = author;
+    }
+
+    // Used for the cache
+    public String getAllString(){
+        return ISBN + " " + Title + " " + Author;
+    }
+
+    // Used by the library
+    public void prettyPrint(){
+        System.out.println("Author: " + getAuthor());
+        System.out.println("Title: " + getTitle());
+        System.out.println("ISBN: " + getISBN());
     }
 }

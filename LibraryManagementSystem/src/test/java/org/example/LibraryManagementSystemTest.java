@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.Books.Book;
+import org.example.LMS.LibraryManagementSystem;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
