@@ -81,12 +81,13 @@ public class Library {
             }
             try {
                 int result = _lib.search(userQuery);
-                System.out.println("[/] Found " + result + " results");
-                if (result != 0) {
-                    _lib.showResultAll();
+                if (result == 0) {
+                    System.out.println("[/] Found " + result + " results");
                 }
+                _lib.showResultAll();
+
             } catch (Exception e) {
-                System.out.println("[!] " + e);
+                // Do nothing
             }
         }
 
@@ -122,7 +123,7 @@ public class Library {
             _lib.deleteBook(userInput);
 
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println("[!] Out of Bounce");
         }
 
     }

@@ -61,6 +61,7 @@ public class LibraryManagementSystem {
         int count = 0;
         for (Book book : _books) {
             if (book.getISBN() == null) {
+                printPretty("[!] Found a Deleted Record in the Cache" );
                 continue;
             }
             printPretty("[" + count++ + "]" + "\nISBN: " + book.getISBN() + "\nAuthor: " + book.getAuthor() + "\nTitle: " + book.getTitle());
@@ -71,6 +72,7 @@ public class LibraryManagementSystem {
         int count = 0;
         for (Book keys : _searchResult.keySet()) {
             if (keys.getISBN() == null) {
+                printPretty("[!] Found a Deleted Record in the Cache" );
                 continue;
             }
             printPretty("[" + count++ + "]" + "\nISBN: " + keys.getISBN() + "\nAuthor: " + keys.getAuthor() + "\nTitle: " + keys.getTitle());
