@@ -38,6 +38,14 @@ public class LibraryServiceImpl implements LibraryService {
         books.remove(index);
     }
 
+    public CacheServiceImpl getCacheServiceImpl() {
+        return cacheServiceImpl;
+    }
+
+    public HashMap<Book, Integer> getSearchResult() {
+        return searchResult;
+    }
+
     /**
      * Search the library for a specific books given a query
      *
