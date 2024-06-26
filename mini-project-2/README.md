@@ -22,7 +22,7 @@ Below this section we'll discuss the individual function of the classes
 
 Contains all the library-related classes such as:
 * Cache
-  * An Implementation for fast searching using hashmap. This is used to cache words in the books for faster searching.
+  * An Implementation for fast searching using hashmap. This is used to cacheServiceImpl words in the books for faster searching.
 * Library
   * The Main Library file to run. It abstracts the Library Management System for easier use of other programs. It handles the menu for the Library
 * Library Management System

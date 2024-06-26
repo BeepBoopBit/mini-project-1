@@ -1,8 +1,9 @@
-package org.stratpoint.LMS;
+package org.stratpoint.service.Impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.stratpoint.Books.Book;
+import org.stratpoint.model.Book;
+import org.stratpoint.service.CacheService;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,10 +18,10 @@ import java.util.Objects;
  *  - [Drawback] Memory O(N) Space
  *      > Where 'N' is the number of unique words/symbols/etc... separated by space in all the books
  */
-public class Cache {
+public class CacheServiceImpl implements CacheService {
     // Contains all the words that are present in all the books
-    private final HashMap<String, HashMap<Book, Integer>> _wordBank = new HashMap<>();
-    private final Logger logger = LoggerFactory.getLogger(Cache.class);
+    private final HashMap<String, HashMap<Book, Integer>> wordBank = new HashMap<>();
+    private final Logger logger = LoggerFactory.getLogger(CacheServiceImpl.class);
 
     /**
      * Add all the words present in the book to the _wordBank
@@ -34,7 +35,7 @@ public class Cache {
 
         // Add all the fields in the books
         for(String word: allInputs){
-            addWord(word, ref);
+            addWord(word.toLowerCase(), ref);
         }
     }
 
@@ -46,12 +47,12 @@ public class Cache {
      */
     private void addWord(String word, Book ref){
         // Check if the word is existing
-        HashMap<Book, Integer> myHash = _wordBank.get(word);
+        HashMap<Book, Integer> myHash = wordBank.get(word);
         boolean isExisting = myHash != null;
 
         // Add a new word if it's not
         if(!isExisting){
-            _wordBank.put(word, new HashMap<>(){{put(ref,1);}});
+            wordBank.put(word, new HashMap<>(){{put(ref,1);}});
             logger.info("Added new word [{}] to the _wordBank", word);
         }
 
@@ -82,6 +83,7 @@ public class Cache {
         ArrayList<HashMap<Book, Integer>> booksWithWords = new ArrayList<>();
         boolean isOperationAND = false;
         for(String word: words){
+            word = word.toLowerCase();
 
             // If '&&' exists, this means we need to perform an AND operation to only show words with
             // having all the words present in the input
@@ -92,10 +94,10 @@ public class Cache {
                 continue;
             }
 
-            // Add the collection of Books from the _wordBank if it exists
-            HashMap<Book, Integer> myHash = _wordBank.get(word);
+            // Add the collection of model from the _wordBank if it exists
+            HashMap<Book, Integer> myHash = wordBank.get(word);
             if(myHash != null){
-                booksWithWords.add(_wordBank.get(word));
+                booksWithWords.add(wordBank.get(word));
             }
         }
 
@@ -139,10 +141,13 @@ public class Cache {
             }
         }
 
+        // Delete none existing keys
+        result.keySet().removeIf(book -> book.getISBN() == null);
+
         return result;
     }
 
     public HashMap<String, HashMap<Book, Integer>> getWordBank() {
-        return _wordBank;
+        return wordBank;
     }
 }

@@ -1,4 +1,4 @@
-package org.stratpoint.Books;
+package org.stratpoint.model;
 
 public class Book{
     private String ISBN = "";

@@ -1,8 +1,9 @@
-package org.stratpoint.LMS;
+package org.stratpoint.service.Impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.stratpoint.Books.Book;
+import org.stratpoint.model.Book;
+import org.stratpoint.service.LibraryService;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,38 +11,31 @@ import java.util.HashMap;
 /**
  * Abstract the management of library
  */
-public class LibraryManagementSystem {
-    private final ArrayList<Book> _books;
-    private final Cache _cache;
-    private HashMap<Book, Integer> _searchResult = null;
-    private final Logger logger = LoggerFactory.getLogger(LibraryManagementSystem.class);
+public class LibraryServiceImpl implements LibraryService {
+    private final ArrayList<Book> books;
+    private final CacheServiceImpl cacheServiceImpl;
+    private HashMap<Book, Integer> searchResult = null;
+    private final Logger logger = LoggerFactory.getLogger(LibraryServiceImpl.class);
 
-    public LibraryManagementSystem() {
-        _books = new ArrayList<>();
-        _cache= new Cache();
+    public LibraryServiceImpl() {
+        books = new ArrayList<>();
+        cacheServiceImpl = new CacheServiceImpl();
     }
 
     public void addBook(Book newBook) {
-        _cache.add(newBook);
-        _books.add(newBook);
-        logger.info("Successfully Added new Book to the cache and list");
+        cacheServiceImpl.add(newBook);
+        books.add(newBook);
+        logger.info("Successfully Added new Book to the cacheServiceImpl and list");
     }
 
     public void deleteBook(int index) throws ArrayIndexOutOfBoundsException {
-        if (index >= _books.size()) {
+        if (index >= books.size()) {
             throw new ArrayIndexOutOfBoundsException();
         }
 
-        // This is done to ensure that the cache wouldn't look at the (none existing) reference book
-        // The book is still there at the 'Cache' and still requires a clean-up.
-        // TODO: Clean-up method for the cache (Optional)
-        _books.get(index).setISBN(null);
-        _books.get(index).setAuthor(null);
-        _books.get(index).setTitle(null);
-        logger.warn("Deleting Information: Need to clean-up the cache");
-
-        // Remove book
-        _books.remove(index);
+        // Remove the book from the cacheServiceImpl and list
+        books.get(index).setISBN(null); // CacheServiceImpl Deletion
+        books.remove(index);
     }
 
     /**
@@ -54,22 +48,22 @@ public class LibraryManagementSystem {
     public int search(String query) throws Exception {
 
         // Search for the user query.
-        _searchResult = _cache.search(query);
+        searchResult = cacheServiceImpl.search(query);
 
         // If there's nothing, return 0, otherwise, return the size
-        if (_searchResult == null) {
+        if (searchResult == null) {
             logger.info("No Result found on Query: " + query);
             return 0;
         }
 
-        return _searchResult.size();
+        return searchResult.size();
     }
 
     public void displayBooks() {
         int count = 0;
-        for (Book book : _books) {
+        for (Book book : books) {
             if (book.getISBN() == null) {
-                System.out.println("[!] Found a Deleted Record in the Cache" );
+                System.out.println("[!] Found a Deleted Record in the CacheServiceImpl" );
                 continue;
             }
             printPretty(book, count);
@@ -79,9 +73,9 @@ public class LibraryManagementSystem {
 
     public void showResultAll() {
         int count = 0;
-        for (Book book: _searchResult.keySet()) {
+        for (Book book: searchResult.keySet()) {
             if (book.getISBN() == null) {
-                System.out.println("[!] Found a Deleted Record in the Cache" );
+                System.out.println("[!] Found a Deleted Record in the CacheServiceImpl" );
                 continue;
             }
             printPretty(book, count);
@@ -98,6 +92,6 @@ public class LibraryManagementSystem {
     }
 
     public ArrayList<Book> getBooks() {
-        return _books;
+        return books;
     }
 }
