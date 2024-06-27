@@ -7,6 +7,7 @@ import lombok.Setter;
 @Getter @Setter @NoArgsConstructor
 public class ProductItem implements Executable{
 
+    int id;
     String productName;
     ProductType type;
     int stock;
@@ -24,6 +25,6 @@ public class ProductItem implements Executable{
         if(type == null){
             return null;
         }
-        return productName + " " + type;
+        return productName + " " + type + " " + description;
     }
 }

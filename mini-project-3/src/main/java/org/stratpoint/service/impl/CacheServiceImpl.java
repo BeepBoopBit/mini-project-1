@@ -38,7 +38,7 @@ public class CacheServiceImpl<T extends Executable> {
 
         // Add all the fields in the books
         for(String word: allInputs){
-            addWord(word, ref);
+            addWord(word.toLowerCase(), ref);
         }
     }
 
@@ -86,6 +86,7 @@ public class CacheServiceImpl<T extends Executable> {
         ArrayList<HashMap<T, Integer>> booksWithWords = new ArrayList<>();
         boolean isOperationAND = false;
         for(String word: words){
+            word = word.toLowerCase();
 
             // If '&&' exists, this means we need to perform an AND operation to only show words with
             // having all the words present in the input

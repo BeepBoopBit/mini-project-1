@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.stratpoint.model.ProductItem;
 import org.stratpoint.service.CartService;
-import org.stratpoint.service.impl.CartServiceImpl;
 import org.stratpoint.service.StoreService;
 
 import java.util.ArrayList;
@@ -32,7 +31,7 @@ public class StoreServiceImpl implements StoreService {
         return items.get(index);
     }
 
-    public boolean checkValidIndex(int index){
+    public boolean checkValidIndexProduct(int index){
         if(items.size() <= index){
             return false;
         }
@@ -40,13 +39,14 @@ public class StoreServiceImpl implements StoreService {
     }
 
     public void addProduct(ProductItem item){
+        item.setId(items.size());
         items.add(item);
         cache.add(item);
     }
 
     public boolean addToCart(int index, int amount){
 
-        if(checkValidIndex(index)){
+        if(checkValidIndexProduct(index)){
             cart.addToCart(items.get(index), amount);
             return true;
         }
@@ -57,13 +57,16 @@ public class StoreServiceImpl implements StoreService {
     public int search(String query) throws Exception {
         var result = cache.search(query);
         searchResult = result;
+
+        if(result == null){
+            return 0;
+        }
         return result.size();
     }
 
     public void displayProducts(){
-        for(int i = 0; i < items.size(); ++i){
-            ProductItem item = items.get(i);
-            System.out.println("Index: [" + i + "]");
+        for (ProductItem item : items) {
+            System.out.println("Product Id: " + item.getId());
             System.out.println("Product Name: " + item.getProductName());
             System.out.println("Product Type: " + item.getType());
             System.out.println("Description: " + item.getDescription());
@@ -75,13 +78,17 @@ public class StoreServiceImpl implements StoreService {
         for(int i = 0; i < items.size(); ++i){
             ProductItem item = items.get(i);
             System.out.print("[" + i + "] ");
-            System.out.println("Product Name: " + item.getProductName());
+            System.out.print("Product Name: " + item.getProductName());
             System.out.println("(" + item.getType() + ")");
         }
     }
 
     public void displaySearchResult(){
+        if(searchResult == null){
+            return;
+        }
         searchResult.forEach((item, val) -> {
+            System.out.println("Product Id: " + item.getId());
             System.out.println("Product Name: " + item.getProductName());
             System.out.println("Product Type: " + item.getType());
             System.out.println("Description: " + item.getDescription());
@@ -94,12 +101,13 @@ public class StoreServiceImpl implements StoreService {
     }
 
     public boolean deleteCartItem(int index){
-        if(items.size() <= index){
-            return false;
-        }
 
-        cart.removeToCart(items.get(index));
-        return true;
+        var result = items.stream().filter((item) -> (item.getId() == index)).findFirst();
+        if(result.isPresent()){
+            cart.removeToCart(result.get());
+            return true;
+        }
+        return false;
     }
 
     public void modifyCartItem(int index, int value){

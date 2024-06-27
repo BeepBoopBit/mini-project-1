@@ -5,37 +5,24 @@ import org.stratpoint.model.ProductType;
 import org.stratpoint.service.StoreService;
 import org.stratpoint.service.impl.StoreServiceImpl;
 
-import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Scanner;
-import java.util.concurrent.Callable;
 
 public class Main {
     StoreService store = new StoreServiceImpl();
 
-    public void askForInput(String mainMenu, ArrayList<Callable<Void>> func){
-        System.out.println(mainMenu);
+    public String askForInput(){
         Scanner scanner = new Scanner(System.in);
+
         try{
             boolean inMenu = true;
-            while(inMenu){
+            while(true){
                 System.out.print(">");
-                int userInput = scanner.nextInt();
-
-                boolean hasCalled = false;
-                int functionSize = func.size();
-                if(functionSize > userInput){
-                    func.get(userInput).call();
-                }else if(functionSize == userInput){
-                    inMenu = false;
-                }
-                else{
-                    System.out.println("[!] Invalid Input");
-                }
+                return scanner.nextLine();
             }
         }catch(Exception e){
             System.out.println("[!] Invalid Input");
         }
+        return null;
     }
 
     public void setUp(){
@@ -43,17 +30,21 @@ public class Main {
         store.addProduct(new ProductItem("water", "melon", ProductType.FOOD, 2));
         store.addProduct(new ProductItem("water", "melon", ProductType.FOOD, 2));
         store.addProduct(new ProductItem("water", "melon", ProductType.FOOD, 2));
-        store.displayProducts();
+        //store.displayProducts();
     }
 
-    public Callable<Void> addProductMenu(){
-        System.out.print("Enter item index (-1 to exit)");
+    public void addProductMenu(){
 
         boolean isAdding = true;
         while(isAdding){
+            System.out.print("Enter item index (-1 to exit)");
             Scanner scanner = new Scanner(System.in);
             int userInputIndex = scanner.nextInt();
-            if(store.checkValidIndex(userInputIndex)){
+            if(userInputIndex == -1){
+                break;
+            }
+            if(store.checkValidIndexProduct(userInputIndex)){
+                System.out.print("Enter Amount: ");
                 int userInputAmount = scanner.nextInt();
                 boolean hasAdded = store.addToCart(userInputIndex, userInputAmount);
                 if(hasAdded){
@@ -65,10 +56,9 @@ public class Main {
                 System.out.println("[!] Invalid Input");
             }
         }
-        return null;
     }
 
-    public Callable<Void> checkProductsMenu(){
+    public void checkProductsMenu(){
         store.displayMinimalProduct();
         String mainMenu = """
                 =============== Check Product ===============
@@ -78,40 +68,58 @@ public class Main {
                 4.) Exit
                 =============================================
                 """;
-        ArrayList<Callable<Void>> functions = new ArrayList<>(){{
-            add(addProductMenu());
-            add(searchProductMenu());
-            add(checkCartMenu());
-        }};
-        askForInput(mainMenu, functions);
-        return null;
+        String userInput = "";
+        while(!userInput.equals("-exit")){
+            System.out.println(mainMenu);
+            userInput = askForInput();
+            switch (userInput){
+                case "1":{
+                    addProductMenu();
+                    break;
+                }
+                case "2":{
+                    searchProductMenu();
+                    break;
+                }
+                case "3":{
+                    checkCartMenu();
+                    break;
+                }
+                case "4":{
+                    userInput = "-exit";
+                    break;
+                }
+                default:{
+                    break;
+                }
+            }
+        }
+
     }
 
-    public Callable<Void> searchProductMenu(){
-        System.out.println("Enter your query (\"\\exit\" to exit)");
-        Scanner scanner = new Scanner(System.in);
+    public void searchProductMenu(){
 
         boolean isSearching = true;
         while(isSearching){
+            System.out.println("Enter your query (\"-exit\" to exit)");
+            Scanner scanner = new Scanner(System.in);
             System.out.print("> ");
             String userInput = scanner.nextLine();
             try {
                 int resultSize = store.search(userInput);
+                if(userInput.equals("-exit")){
+                    isSearching = false;
+                    continue;
+                }
                 System.out.println("[/] Found " + resultSize + " results");
                 store.displaySearchResult();
-
-                if(Objects.equals(userInput, "\\exit")){
-                    isSearching = false;
-                }
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
         }
-
-        return null;
     }
 
-    public Callable<Void> modifyCartItemMenu(){
+    public void modifyCartItemMenu(){
         boolean inDeleting = true;
         while(inDeleting){
             System.out.print("Enter Index to modify (-1 to exit): ");
@@ -132,10 +140,9 @@ public class Main {
                 System.out.println("[!] Invalid Input");
             }
         }
-        return null;
     }
 
-    public Callable<Void> deleteCartItemMenu(){
+    public void deleteCartItemMenu(){
         boolean inDeleting = true;
         while(inDeleting){
             System.out.print("Enter Index to delete (-1 to exit): ");
@@ -156,10 +163,9 @@ public class Main {
                 System.out.println("[!] Invalid Input");
             }
         }
-        return null;
     }
 
-    public Callable<Void> checkCartMenu(){
+    public void checkCartMenu(){
         store.displayCartItems();
         String mainMenu = """
                 =============== Cart Items ===============
@@ -168,35 +174,70 @@ public class Main {
                 3.) Exit
                 ==========================================
                 """;
-
-        ArrayList<Callable<Void>> functions = new ArrayList<>(){{
-            add(modifyCartItemMenu());
-            add(deleteCartItemMenu());
-        }};
-        askForInput(mainMenu, functions);
-
-        return null;
+        String userInput = "";
+        while(!userInput.contains("-exit")){
+            System.out.println(mainMenu);
+            userInput = askForInput();
+            switch (userInput){
+                case "1":{
+                    modifyCartItemMenu();
+                    break;
+                }
+                case "2":{
+                    deleteCartItemMenu();
+                    break;
+                }
+                case "3":{
+                    userInput = "-exit";
+                    break;
+                }
+                default:{
+                    System.out.println("[!] Invalid Input");
+                    break;
+                }
+            }
+        }
     }
 
     public void menu(){
         String mainMenu = """
                 =============== Store Service ===============
-                1.) Check Products
+                1.) Check/Buy Products
                 2.) Search Products
                 3.) Check Cart
                 4.) Exit
                 =============================================
                 """;
-        ArrayList<Callable<Void>> functions = new ArrayList<>(){{
-            add(checkProductsMenu());
-            add(searchProductMenu());
-            add(checkCartMenu());
-        }};
-        askForInput(mainMenu, functions);
+        String userInput = "";
+        while(!userInput.equals("-exit")){
+            System.out.println(mainMenu);
+            userInput = askForInput();
+            switch (userInput){
+                case "1":{
+                    checkProductsMenu();
+                    break;
+                }
+                case "2":{
+                    searchProductMenu();
+                    break;
+                }
+                case "3":{
+                    checkCartMenu();
+                    break;
+                }
+                case "4":{
+                    userInput = "-exit";
+                    break;
+                }
+                default:{
+                    System.out.println("[!] Wrong Input");
+                    break;
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {
-        // TODO: fix callable
         Main main = new Main();
         main.setUp();
         main.menu();

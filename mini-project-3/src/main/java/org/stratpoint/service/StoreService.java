@@ -11,5 +11,5 @@ public interface StoreService {
     boolean deleteCartItem(int index);
     void modifyCartItem(int index, int value);
     boolean addToCart(int index, int amount);
-    boolean checkValidIndex(int index);
+    boolean checkValidIndexProduct(int index);
 }
