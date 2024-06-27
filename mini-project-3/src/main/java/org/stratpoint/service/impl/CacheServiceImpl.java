@@ -143,6 +143,9 @@ public class CacheServiceImpl<T extends Executable> {
             }
         }
 
+        // Remove none-existing keys
+        result.keySet().removeIf(item-> item.getAllString() == null);
+
         return result;
     }
 
