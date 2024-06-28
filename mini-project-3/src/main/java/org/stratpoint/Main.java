@@ -12,13 +12,10 @@ public class Main {
 
     public String askForInput(){
         Scanner scanner = new Scanner(System.in);
-
         try{
             boolean inMenu = true;
-            while(true){
-                System.out.print(">");
-                return scanner.nextLine();
-            }
+            System.out.print("> ");
+            return scanner.nextLine();
         }catch(Exception e){
             System.out.println("[!] Invalid Input");
         }
@@ -26,31 +23,38 @@ public class Main {
     }
 
     public void setUp(){
-        store.addProduct(new ProductItem("water", "melon", ProductType.FOOD, 2));
-        store.addProduct(new ProductItem("water", "melon", ProductType.FOOD, 2));
-        store.addProduct(new ProductItem("water", "melon", ProductType.FOOD, 2));
-        store.addProduct(new ProductItem("water", "melon", ProductType.FOOD, 2));
-        //store.displayProducts();
+        store.addProduct(new ProductItem("water", "lalo", ProductType.FOOD, 2));
+        store.addProduct(new ProductItem("papaya", "melon", ProductType.FOOD, 2));
+        store.addProduct(new ProductItem("banana", "melon", ProductType.FOOD, 2));
+        store.addProduct(new ProductItem("fruit", "water", ProductType.FOOD, 2));
     }
 
     public void addProductMenu(){
 
         boolean isAdding = true;
         while(isAdding){
-            System.out.print("Enter item index (-1 to exit)");
+
+            // Get the Item Index of the product
+            System.out.print("Enter item index (-1 to exit) ");
             Scanner scanner = new Scanner(System.in);
             int userInputIndex = scanner.nextInt();
+
+            // Exit
             if(userInputIndex == -1){
                 break;
             }
+
+            // If it's a valid index
             if(store.checkValidIndexProduct(userInputIndex)){
+
+                // Change the amount if it exists it the cart
                 System.out.print("Enter Amount: ");
                 int userInputAmount = scanner.nextInt();
                 boolean hasAdded = store.addToCart(userInputIndex, userInputAmount);
                 if(hasAdded){
                     System.out.println("[/] Successfully added to cart ProductID: " + userInputIndex);
                 }else{
-                    System.out.println("[!] Not enough stock");
+                    System.out.println("[!] Stock Input Error");
                 }
             }else{
                 System.out.println("[!] Invalid Input");
@@ -65,7 +69,8 @@ public class Main {
                 1.) Add to an item to Cart
                 2.) Search Products
                 3.) Check Cart
-                4.) Exit
+                4.) Display Products
+                5.) Exit
                 =============================================
                 """;
         String userInput = "";
@@ -86,6 +91,10 @@ public class Main {
                     break;
                 }
                 case "4":{
+                    store.displayMinimalProduct();
+                    break;
+                }
+                case "5":{
                     userInput = "-exit";
                     break;
                 }
@@ -101,18 +110,25 @@ public class Main {
 
         boolean isSearching = true;
         while(isSearching){
+
+            // Get the searching query
             System.out.println("Enter your query (\"-exit\" to exit)");
             Scanner scanner = new Scanner(System.in);
             System.out.print("> ");
             String userInput = scanner.nextLine();
+
+            // Exit
+            if(userInput.equals("-exit")){
+                isSearching = false;
+                continue;
+            }
             try {
+                // if there is a result, print it
                 int resultSize = store.search(userInput);
-                if(userInput.equals("-exit")){
-                    isSearching = false;
-                    continue;
-                }
                 System.out.println("[/] Found " + resultSize + " results");
-                store.displaySearchResult();
+                if(resultSize > 0){
+                    store.displaySearchResult();
+                }
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -120,21 +136,39 @@ public class Main {
     }
 
     public void modifyCartItemMenu(){
+        if(store.isCartEmpty()){
+            System.out.println("[!] Nothing in cart");
+            return;
+        }
+
         boolean inDeleting = true;
         while(inDeleting){
+
+            // Get the index of the item in cart
             System.out.print("Enter Index to modify (-1 to exit): ");
             Scanner scanner = new Scanner(System.in);
 
             try{
                 int userInputIndex = scanner.nextInt();
+
+                // Exit
                 if(userInputIndex == -1){
                     inDeleting = false;
-                }else{
-                    System.out.print("Enter the number of stocks to buy: ");
+                }
+                else if (!store.checkValidIndexCart(userInputIndex)) {
+                    System.out.println("[!] Invalid Index");
+                }
+                else{
+                    System.out.print("Enter the new stocks to buy: ");
                     int userInputStocks = scanner.nextInt();
 
-                    store.modifyCartItem(userInputIndex, userInputStocks);
-                    System.out.println("[/] Successfully modified in Cart with ProductID of: " + userInputIndex);
+                    // Modify the cart item if its exists, otherwise, invalid
+                    if(store.modifyCartItem(userInputIndex, userInputStocks)){
+                        System.out.println("[/] Successfully modified in Cart with ProductID of: " + userInputIndex);
+                        break;
+                    }else{
+                        System.out.println("[!] Invalid Number");
+                    }
                 }
             }catch (Exception e){
                 System.out.println("[!] Invalid Input");
@@ -143,6 +177,10 @@ public class Main {
     }
 
     public void deleteCartItemMenu(){
+        if(store.isCartEmpty()){
+            System.out.println("[!] Nothing in cart");
+            return;
+        }
         boolean inDeleting = true;
         while(inDeleting){
             System.out.print("Enter Index to delete (-1 to exit): ");
@@ -152,6 +190,8 @@ public class Main {
                 if(userInput == -1){
                     inDeleting = false;
                 }else{
+
+                    // Delete if it exists in the cart
                     boolean hasDeleted = store.deleteCartItem(userInput);
                     if(hasDeleted){
                         System.out.println("[/] Successfully Deleted in Cart with ProductID of: " + userInput);
@@ -171,6 +211,7 @@ public class Main {
                 =============== Cart Items ===============
                 1.) Modify an Item
                 2.) Delete an Item
+                4.) Display Cart Items
                 3.) Exit
                 ==========================================
                 """;
@@ -188,6 +229,10 @@ public class Main {
                     break;
                 }
                 case "3":{
+                    store.displayCartItems();
+                    break;
+                }
+                case "4":{
                     userInput = "-exit";
                     break;
                 }

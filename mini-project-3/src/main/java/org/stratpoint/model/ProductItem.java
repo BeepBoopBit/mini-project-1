@@ -20,6 +20,18 @@ public class ProductItem implements Executable{
         this.description = description;
     }
 
+    public boolean buyStock(int quantity){
+        if(stock >= quantity){
+            stock -= quantity;
+            return true;
+        }
+        return false;
+    }
+
+    public void addStock(int quantity){
+        stock += quantity;
+    }
+
     @Override
     public String getAllString() {
         if(type == null){

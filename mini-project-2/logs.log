@@ -1,21 +1,19 @@
-2024-06-26 22:40:58.042 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [123-45] to the _wordBank
-2024-06-26 22:40:58.045 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [water] to the _wordBank
-2024-06-26 22:40:58.046 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [melon] to the _wordBank
-2024-06-26 22:40:58.046 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [la] to the _wordBank
-2024-06-26 22:40:58.046 [main] INFO  org.stratpoint.service.Impl.LibraryServiceImpl - Successfully Added new Book to the cacheServiceImpl and list
-2024-06-26 22:40:58.046 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [123-465] to the _wordBank
-2024-06-26 22:40:58.046 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [papaya] to the _wordBank
-2024-06-26 22:40:58.046 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [le] to the _wordBank
-2024-06-26 22:40:58.046 [main] INFO  org.stratpoint.service.Impl.LibraryServiceImpl - Successfully Added new Book to the cacheServiceImpl and list
-2024-06-26 22:40:58.046 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [123-457] to the _wordBank
-2024-06-26 22:40:58.047 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [banana] to the _wordBank
-2024-06-26 22:40:58.047 [main] INFO  org.stratpoint.service.Impl.LibraryServiceImpl - Successfully Added new Book to the cacheServiceImpl and list
-2024-06-26 22:40:58.047 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [123-458] to the _wordBank
-2024-06-26 22:40:58.047 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [lo] to the _wordBank
-2024-06-26 22:40:58.047 [main] INFO  org.stratpoint.service.Impl.LibraryServiceImpl - Successfully Added new Book to the cacheServiceImpl and list
-2024-06-26 22:40:58.047 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [123-459] to the _wordBank
-2024-06-26 22:40:58.047 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [lu] to the _wordBank
-2024-06-26 22:40:58.047 [main] INFO  org.stratpoint.service.Impl.LibraryServiceImpl - Successfully Added new Book to the cacheServiceImpl and list
-2024-06-26 22:40:58.048 [main] INFO  org.stratpoint.Main - Default Initialize model
-2024-06-26 22:41:06.776 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Setting [AND] Operation in query: water && melon
-2024-06-26 22:41:13.934 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Setting [AND] Operation in query: banana && melon
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [123-45] to the _wordBank
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [water] to the _wordBank
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [melon] to the _wordBank
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [la] to the _wordBank
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.LibraryServiceImpl - Successfully Added new Book to the cacheServiceImpl and list
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [123-465] to the _wordBank
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [papaya] to the _wordBank
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [le] to the _wordBank
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.LibraryServiceImpl - Successfully Added new Book to the cacheServiceImpl and list
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [123-457] to the _wordBank
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [banana] to the _wordBank
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.LibraryServiceImpl - Successfully Added new Book to the cacheServiceImpl and list
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [123-458] to the _wordBank
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [lo] to the _wordBank
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.LibraryServiceImpl - Successfully Added new Book to the cacheServiceImpl and list
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [123-459] to the _wordBank
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.CacheServiceImpl - Added new word [lu] to the _wordBank
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.service.Impl.LibraryServiceImpl - Successfully Added new Book to the cacheServiceImpl and list
+2024-06-28 11:07:16.646 [main] INFO  org.stratpoint.Main - Default Initialize model

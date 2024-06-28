@@ -2,6 +2,8 @@ package org.stratpoint.service.impl;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.stratpoint.model.ProductItem;
 import org.stratpoint.service.CartService;
 import org.stratpoint.service.StoreService;
@@ -9,28 +11,32 @@ import org.stratpoint.service.StoreService;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-// TODO: You can't remove a product until it's in stock.
-
 @Getter @Setter
 public class StoreServiceImpl implements StoreService {
     private final ArrayList<ProductItem> items = new ArrayList<>();
     private final CacheServiceImpl<ProductItem> cache;
     private final CartService cart;
     private HashMap<ProductItem, Integer> searchResult = null;
+    private final Logger logger = LoggerFactory.getLogger(StoreService.class);
 
     public StoreServiceImpl(){
         this.cache = new CacheServiceImpl<>();
         this.cart = new CartServiceImpl();
     }
-    public StoreServiceImpl(CacheServiceImpl<ProductItem> cache, CartService cart) {
-        this.cache = cache;
-        this.cart = cart;
+
+    /**
+     *  Check if the cart is empty
+     * @return `boolean` about the state of the cart
+     */
+    public boolean isCartEmpty(){
+        return cart.isEmpty();
     }
 
-    public ProductItem getProductItem(int index){
-        return items.get(index);
-    }
-
+    /**
+     * Check if the index of the product is valid.
+     * @param index: index of the product
+     * @return `boolean` if the product is valid or not
+     */
     public boolean checkValidIndexProduct(int index){
         if(items.size() <= index){
             return false;
@@ -38,29 +44,53 @@ public class StoreServiceImpl implements StoreService {
         return true;
     }
 
+    /**
+     * Check if the index of the item in cart is valid
+     * @param index: Index of the cart item
+     * @return `boolean` if the product is in cart
+     */
+    public boolean checkValidIndexCart(int index){
+        return cart.checkItemIfInCart(items.get(index));
+    }
+
+    /**
+     * Add the product to both the cache and item
+     * @param item: The product item
+     */
     public void addProduct(ProductItem item){
         item.setId(items.size());
         items.add(item);
         cache.add(item);
+        logger.info("Adding values an item to the store (" + item.getId() + ")");
     }
 
+    /**
+     * Add a product item to the cart>
+     * @param index: Index of the product at the items list
+     * @param amount: Amount of stock to buy
+     * @return a boolean if it successfully add the item to the cart
+     */
     public boolean addToCart(int index, int amount){
-
-        if(checkValidIndexProduct(index)){
-            cart.addToCart(items.get(index), amount);
-            return true;
-        }
-
+        logger.info("Adding an item to the cart (" + index + ":" + amount + ")");
+        if(checkValidIndexProduct(index)) return cart.addToCart(items.get(index), amount);
         return false;
     }
 
+    /**
+     * Search for all the products in the query base on all of its attributes
+     * @param query: A string of keywords
+     * @return the size of the search result
+     * @throws Exception
+     */
     public int search(String query) throws Exception {
         var result = cache.search(query);
         searchResult = result;
 
         if(result == null){
+            logger.info("Search Result with query [" + query + "] is null");
             return 0;
         }
+        logger.info("Search Result with query [" + query + "] have " + result.size());
         return result.size();
     }
 
@@ -78,8 +108,7 @@ public class StoreServiceImpl implements StoreService {
         for(int i = 0; i < items.size(); ++i){
             ProductItem item = items.get(i);
             System.out.print("[" + i + "] ");
-            System.out.print("Product Name: " + item.getProductName());
-            System.out.println("(" + item.getType() + ")");
+            System.out.println(item.getProductName() + ". " + item.getType() + " (Stock: " + item.getStock() + ")");
         }
     }
 
@@ -100,17 +129,33 @@ public class StoreServiceImpl implements StoreService {
         cart.displayCartItems();
     }
 
+    /**
+     * Delete at item to the cart if it exists
+     * @param index
+     * @return `boolean` if it successfully deleted an item
+     */
     public boolean deleteCartItem(int index){
 
+        // Find the index in the items and get it. Remove it to the cart if it exists
         var result = items.stream().filter((item) -> (item.getId() == index)).findFirst();
         if(result.isPresent()){
+            logger.info("Removing Item to the cart (" + index + ")");
             cart.removeToCart(result.get());
             return true;
         }
+
+        logger.info("Item does not exists in the cart (" + index + ")");
         return false;
     }
 
-    public void modifyCartItem(int index, int value){
-        cart.modifyCartItemStock(items.get(index), value);
+    /**
+     * Modify the number of stocks to be bought by a user in the cart
+     * @param index: The product index
+     * @param value: THe amount of value to change
+     * @return `boolean` if it successfuly modified the item
+     */
+    public boolean modifyCartItem(int index, int value){
+        logger.info("Modifying cart item (" + index + ") to [" + value + "]");
+        return cart.modifyCartItemStock(items.get(index), value);
     }
 }

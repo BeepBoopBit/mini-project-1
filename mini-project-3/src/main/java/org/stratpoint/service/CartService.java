@@ -4,8 +4,10 @@ import org.stratpoint.model.ProductItem;
 import org.stratpoint.service.impl.CartServiceImpl;
 
 public interface CartService {
-    void addToCart(ProductItem item, Integer amount);
+    boolean addToCart(ProductItem item, Integer amount);
     void removeToCart(ProductItem item);
-    void modifyCartItemStock(ProductItem item, Integer stock);
+    boolean modifyCartItemStock(ProductItem item, Integer stock);
     void displayCartItems();
+    boolean checkItemIfInCart(ProductItem item);
+    boolean isEmpty();
 }
