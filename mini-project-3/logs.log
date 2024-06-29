@@ -1,21 +1,9 @@
-2024-06-29 23:27:30.227 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [water] to the wordBank
-2024-06-29 23:27:30.233 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [food] to the wordBank
-2024-06-29 23:27:30.233 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [a] to the wordBank
-2024-06-29 23:27:30.233 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [melon] to the wordBank
-2024-06-29 23:27:30.233 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [b] to the wordBank
-2024-06-29 23:27:30.233 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [papaya] to the wordBank
-2024-06-29 23:27:30.233 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [c] to the wordBank
-2024-06-29 23:27:30.233 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [banana] to the wordBank
-2024-06-29 23:27:30.233 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [d] to the wordBank
-2024-06-29 23:27:30.234 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [fruit] to the wordBank
-2024-06-29 23:27:30.234 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [e] to the wordBank
-2024-06-29 23:27:30.234 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [salad] to the wordBank
-2024-06-29 23:27:30.234 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [f] to the wordBank
-2024-06-29 23:27:30.234 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [things] to the wordBank
-2024-06-29 23:27:30.234 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [ingredient] to the wordBank
-2024-06-29 23:27:30.234 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [g] to the wordBank
-2024-06-29 23:27:30.234 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [mouse] to the wordBank
-2024-06-29 23:27:30.234 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [h] to the wordBank
-2024-06-29 23:27:30.234 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [key] to the wordBank
-2024-06-29 23:27:30.235 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [drink] to the wordBank
-2024-06-29 23:27:30.235 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [i] to the wordBank
+2024-06-29 23:41:26.365 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-29 23:41:26.373 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-29 23:41:26.374 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-29 23:41:26.374 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-29 23:41:26.374 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-29 23:41:26.375 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-29 23:41:26.375 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-29 23:41:26.375 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-29 23:41:26.375 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
