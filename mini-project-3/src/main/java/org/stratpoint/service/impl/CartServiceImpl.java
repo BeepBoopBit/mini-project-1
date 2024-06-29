@@ -61,8 +61,11 @@ public class CartServiceImpl implements CartService {
      * Remove an item to the cart
      * @param item: The product object
      */
-    public void removeToCart(ProductItem item){
+    public void removeToCart(ProductItem item) throws Exception {
         logger.info("Removing stock (" + item.getId() + ")");
+        if(!cart.containsKey(item)){
+            throw new Exception("Item doesn't exists in the cart (only happen when adding is not done through the store)");
+        }
         item.addStock(cart.get(item));
         cart.remove(item);
     }

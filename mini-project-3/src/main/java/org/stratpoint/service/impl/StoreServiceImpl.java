@@ -140,7 +140,14 @@ public class StoreServiceImpl implements StoreService {
         var result = items.stream().filter((item) -> (item.getId() == index)).findFirst();
         if(result.isPresent()){
             logger.info("Removing Item to the cart (" + index + ")");
-            cart.removeToCart(result.get());
+            if(!cart.checkItemIfInCart(items.get(index))){
+                return false;
+            }
+            try{
+                cart.removeToCart(result.get());
+            }catch(Exception e){
+                return false;
+            }
             return true;
         }
 

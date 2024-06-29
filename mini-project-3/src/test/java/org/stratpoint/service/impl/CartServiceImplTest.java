@@ -65,7 +65,7 @@ class CartServiceImplTest {
     }
 
     @Test
-    void removeToCart() {
+    void removeToCart() throws Exception {
         for (ProductItem item : items) {
             cart.removeToCart(item);
 
