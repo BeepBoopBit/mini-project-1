@@ -37,7 +37,14 @@ public class Main {
             // Get the Item Index of the product
             System.out.print("Enter item index (-1 to exit) ");
             Scanner scanner = new Scanner(System.in);
-            int userInputIndex = scanner.nextInt();
+
+            int userInputIndex = 0;
+            try{
+                userInputIndex = scanner.nextInt();
+            }catch(Exception e){
+                System.out.println("[!] Invalid Input");
+                continue;
+            }
 
             // Exit
             if(userInputIndex == -1){
@@ -160,7 +167,14 @@ public class Main {
                 }
                 else{
                     System.out.print("Enter the new stocks to buy: ");
-                    int userInputStocks = scanner.nextInt();
+
+                    int userInputStocks = 0;
+                    try{
+                        userInputStocks = scanner.nextInt();
+                    }catch (Exception e){
+                        System.out.println("[!] Invalid Input");
+                        continue;
+                    }
 
                     // Modify the cart item if its exists, otherwise, invalid
                     if(store.modifyCartItem(userInputIndex, userInputStocks)){
@@ -211,8 +225,8 @@ public class Main {
                 =============== Cart Items ===============
                 1.) Modify an Item
                 2.) Delete an Item
-                4.) Display Cart Items
-                3.) Exit
+                3.) Display Cart Items
+                4.) Exit
                 ==========================================
                 """;
         String userInput = "";
