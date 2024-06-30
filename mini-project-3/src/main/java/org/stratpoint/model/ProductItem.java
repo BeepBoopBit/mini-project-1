@@ -12,12 +12,14 @@ public class ProductItem implements Executable{
     ProductType type;
     int stock;
     String description;
+    double price = 0;
 
-    public ProductItem(String productName, String description, ProductType type, int stock) {
+    public ProductItem(String productName, String description, ProductType type, int stock, double price) {
         this.productName = productName;
         this.type = type;
         this.stock = stock;
         this.description = description;
+        this.price = price;
     }
 
     public boolean buyStock(int quantity){

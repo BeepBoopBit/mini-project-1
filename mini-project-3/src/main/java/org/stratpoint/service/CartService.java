@@ -10,4 +10,6 @@ public interface CartService {
     void displayCartItems();
     boolean checkItemIfInCart(ProductItem item);
     boolean isEmpty();
+    void displayCheckoutCart();
+    double checkoutCart(double userMoney);
 }

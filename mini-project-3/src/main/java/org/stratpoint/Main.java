@@ -23,10 +23,10 @@ public class Main {
     }
 
     public void setUp(){
-        store.addProduct(new ProductItem("water", "lalo", ProductType.FOOD, 2));
-        store.addProduct(new ProductItem("papaya", "melon", ProductType.FOOD, 2));
-        store.addProduct(new ProductItem("banana", "melon", ProductType.FOOD, 2));
-        store.addProduct(new ProductItem("fruit", "water", ProductType.FOOD, 2));
+        store.addProduct(new ProductItem("water", "lalo", ProductType.FOOD, 2, 10));
+        store.addProduct(new ProductItem("papaya", "melon", ProductType.FOOD, 2, 10.5));
+        store.addProduct(new ProductItem("banana", "melon", ProductType.FOOD, 2,3.2));
+        store.addProduct(new ProductItem("fruit", "water", ProductType.FOOD, 2,5.2));
     }
 
     public void addProductMenu(){
@@ -258,13 +258,59 @@ public class Main {
         }
     }
 
+    public void checkoutCart(){
+        boolean inCheckout = true;
+        while(inCheckout){
+            try{
+                System.out.print("Enter Money: ");
+                Scanner scanner = new Scanner(System.in);
+                double userInput = scanner.nextDouble();
+                double change = store.checkoutCart(userInput);
+                if(change < 0){
+                    System.out.println("[!] Money is not enough");
+                }else{
+                    System.out.println("[/] Thanks for Shopping!! Your Change is: " + change);
+                    inCheckout = false;
+                }
+            }catch (Exception e){
+                System.out.println("[!] Invalid Money");
+            }
+        }
+    }
+
+    public void checkoutMenu(){
+        store.displayCheckoutCart();
+        System.out.println("Want to proceed (y/n): ");
+
+        boolean inCheckoutMenu = true;
+        while(inCheckoutMenu){
+            Scanner scanner = new Scanner(System.in);
+            String userInput = scanner.nextLine();
+            switch(userInput.toLowerCase()){
+                case "y":{
+                    checkoutCart();
+                    inCheckoutMenu = false;
+                    break;
+                }
+                case "n":{
+                    inCheckoutMenu = false;
+                    break;
+                }
+                default:{
+                    System.out.println("[!] Invalid Input");
+                }
+            }
+        }
+    }
+
     public void menu(){
         String mainMenu = """
                 =============== Store Service ===============
                 1.) Check/Buy Products
                 2.) Search Products
                 3.) Check Cart
-                4.) Exit
+                4.) Checkout
+                5.) Exit
                 =============================================
                 """;
         String userInput = "";
@@ -285,6 +331,10 @@ public class Main {
                     break;
                 }
                 case "4":{
+                    checkoutMenu();
+                    break;
+                }
+                case "5":{
                     userInput = "-exit";
                     break;
                 }

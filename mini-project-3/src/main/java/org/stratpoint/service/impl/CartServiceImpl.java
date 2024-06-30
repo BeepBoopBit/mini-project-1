@@ -35,7 +35,12 @@ public class CartServiceImpl implements CartService {
 
             logger.info("Adding stock with item (" + item.getId() + ")");
             // Replace/Add if we have
-            cart.put(item, amount);
+
+            if(cart.containsKey(item)){
+                cart.put(item, amount+cart.get(item));
+            }else{
+                cart.put(item, amount);
+            }
             return true;
         }
     }
@@ -102,8 +107,43 @@ public class CartServiceImpl implements CartService {
                     System.out.println("Product Type: " + item.getType());
                     System.out.println("Description: " + item.getDescription());
                     System.out.println("Buying: " + bought);
+                    System.out.println("Total: " + item.getPrice() * bought);
                 }
         );
+    }
+
+    public void displayCheckoutCart(){
+        var keys = cart.keySet();
+
+        double total = 0;
+        for(var key: keys){
+            int bought = cart.get(key);
+            total += bought * key.getPrice();
+            System.out.println(
+                    "Product Name: "
+                            + key.getProductName()
+                            + "(" + bought + ") -- "
+                            + key.getPrice() * bought
+            );
+        }
+
+        System.out.println("-".repeat(25));
+        System.out.println("Total: " + total);
+    }
+
+    public double checkoutCart(double userMoney){
+        var keys = cart.keySet();
+        double total = 0;
+        for(var key: keys){
+            int bought = cart.get(key);
+            total += bought * key.getPrice();
+        }
+        if(userMoney < total){
+            return -1;
+        }
+
+        cart.clear();
+        return userMoney-total;
     }
 
 }

@@ -165,4 +165,12 @@ public class StoreServiceImpl implements StoreService {
         logger.info("Modifying cart item (" + index + ") to [" + value + "]");
         return cart.modifyCartItemStock(items.get(index), value);
     }
+
+    public void displayCheckoutCart(){
+        cart.displayCheckoutCart();
+    }
+
+    public double checkoutCart(double userMoney){
+        return cart.checkoutCart(userMoney);
+    }
 }

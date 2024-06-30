@@ -57,8 +57,14 @@ class CacheServiceImplTest {
                 1,2,3,
         };
 
+        double[] prices = {
+                1,2,3,
+                1.1,2.2,3.3,
+                1.4,2.5,3.6,
+        };
+
         for(int i = 0 ; i < types.length; ++i){
-            cache.add(new ProductItem(products[i],description[i], types[i], stocks[i]));
+            cache.add(new ProductItem(products[i],description[i], types[i], stocks[i], prices[i]));
         }
 
         for(var data: myWords){

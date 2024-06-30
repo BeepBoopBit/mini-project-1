@@ -1,18 +1,309 @@
-2024-06-30 21:00:21.726 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [water] to the wordBank
-2024-06-30 21:00:21.731 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [food] to the wordBank
-2024-06-30 21:00:21.731 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [lalo] to the wordBank
-2024-06-30 21:00:21.732 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (0)
-2024-06-30 21:00:21.732 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [papaya] to the wordBank
-2024-06-30 21:00:21.733 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [melon] to the wordBank
-2024-06-30 21:00:21.733 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (1)
-2024-06-30 21:00:21.733 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [banana] to the wordBank
-2024-06-30 21:00:21.733 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (2)
-2024-06-30 21:00:21.733 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [fruit] to the wordBank
-2024-06-30 21:00:21.733 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (3)
-2024-06-30 21:00:38.260 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (0:5)
-2024-06-30 21:00:38.261 [main] INFO  org.stratpoint.service.CartService - Failed to add stock with item (0)
-2024-06-30 21:00:41.713 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (0:1)
-2024-06-30 21:00:41.713 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
-2024-06-30 21:00:50.181 [main] INFO  org.stratpoint.service.StoreService - Modifying cart item (0) to [2]
-2024-06-30 21:00:50.181 [main] INFO  org.stratpoint.service.CartService - Modifying stock at (0)
-2024-06-30 21:01:08.607 [main] INFO  org.stratpoint.service.StoreService - Search Result with query [lalo] have 1
+2024-06-30 21:43:30.551 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [water] to the wordBank
+2024-06-30 21:43:30.558 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [food] to the wordBank
+2024-06-30 21:43:30.558 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [a] to the wordBank
+2024-06-30 21:43:30.558 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [melon] to the wordBank
+2024-06-30 21:43:30.558 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [b] to the wordBank
+2024-06-30 21:43:30.558 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [papaya] to the wordBank
+2024-06-30 21:43:30.559 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [c] to the wordBank
+2024-06-30 21:43:30.559 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [banana] to the wordBank
+2024-06-30 21:43:30.559 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [d] to the wordBank
+2024-06-30 21:43:30.559 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [fruit] to the wordBank
+2024-06-30 21:43:30.559 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [e] to the wordBank
+2024-06-30 21:43:30.559 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [salad] to the wordBank
+2024-06-30 21:43:30.559 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [f] to the wordBank
+2024-06-30 21:43:30.559 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [things] to the wordBank
+2024-06-30 21:43:30.559 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [ingredient] to the wordBank
+2024-06-30 21:43:30.559 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [g] to the wordBank
+2024-06-30 21:43:30.559 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [mouse] to the wordBank
+2024-06-30 21:43:30.560 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [h] to the wordBank
+2024-06-30 21:43:30.560 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [key] to the wordBank
+2024-06-30 21:43:30.560 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [drink] to the wordBank
+2024-06-30 21:43:30.560 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [i] to the wordBank
+2024-06-30 21:43:30.618 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [water] to the wordBank
+2024-06-30 21:43:30.618 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [food] to the wordBank
+2024-06-30 21:43:30.618 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [a] to the wordBank
+2024-06-30 21:43:30.618 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [melon] to the wordBank
+2024-06-30 21:43:30.619 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [b] to the wordBank
+2024-06-30 21:43:30.619 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [papaya] to the wordBank
+2024-06-30 21:43:30.619 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [c] to the wordBank
+2024-06-30 21:43:30.619 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [banana] to the wordBank
+2024-06-30 21:43:30.619 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [d] to the wordBank
+2024-06-30 21:43:30.619 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [fruit] to the wordBank
+2024-06-30 21:43:30.619 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [e] to the wordBank
+2024-06-30 21:43:30.619 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [salad] to the wordBank
+2024-06-30 21:43:30.619 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [f] to the wordBank
+2024-06-30 21:43:30.620 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [things] to the wordBank
+2024-06-30 21:43:30.620 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [ingredient] to the wordBank
+2024-06-30 21:43:30.620 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [g] to the wordBank
+2024-06-30 21:43:30.620 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [mouse] to the wordBank
+2024-06-30 21:43:30.620 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [h] to the wordBank
+2024-06-30 21:43:30.620 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [key] to the wordBank
+2024-06-30 21:43:30.620 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [drink] to the wordBank
+2024-06-30 21:43:30.620 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [i] to the wordBank
+2024-06-30 21:43:30.642 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.643 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.643 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.643 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.643 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.643 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.643 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.643 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.643 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.644 [main] INFO  org.stratpoint.service.CartService - Modifying stock at (0)
+2024-06-30 21:43:30.644 [main] INFO  org.stratpoint.service.CartService - Modifying stock at (0)
+2024-06-30 21:43:30.644 [main] INFO  org.stratpoint.service.CartService - Modifying stock at (0)
+2024-06-30 21:43:30.644 [main] INFO  org.stratpoint.service.CartService - Modifying stock at (0)
+2024-06-30 21:43:30.645 [main] INFO  org.stratpoint.service.CartService - Modifying stock at (0)
+2024-06-30 21:43:30.645 [main] INFO  org.stratpoint.service.CartService - Modifying stock at (0)
+2024-06-30 21:43:30.645 [main] INFO  org.stratpoint.service.CartService - Modifying stock at (0)
+2024-06-30 21:43:30.645 [main] INFO  org.stratpoint.service.CartService - Modifying stock at (0)
+2024-06-30 21:43:30.645 [main] INFO  org.stratpoint.service.CartService - Modifying stock at (0)
+2024-06-30 21:43:30.650 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.651 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.651 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.651 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.651 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.651 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.651 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.651 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.651 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.652 [main] INFO  org.stratpoint.service.CartService - Removing stock (0)
+2024-06-30 21:43:30.652 [main] INFO  org.stratpoint.service.CartService - Removing stock (0)
+2024-06-30 21:43:30.652 [main] INFO  org.stratpoint.service.CartService - Removing stock (0)
+2024-06-30 21:43:30.652 [main] INFO  org.stratpoint.service.CartService - Removing stock (0)
+2024-06-30 21:43:30.653 [main] INFO  org.stratpoint.service.CartService - Removing stock (0)
+2024-06-30 21:43:30.653 [main] INFO  org.stratpoint.service.CartService - Removing stock (0)
+2024-06-30 21:43:30.653 [main] INFO  org.stratpoint.service.CartService - Removing stock (0)
+2024-06-30 21:43:30.653 [main] INFO  org.stratpoint.service.CartService - Removing stock (0)
+2024-06-30 21:43:30.653 [main] INFO  org.stratpoint.service.CartService - Removing stock (0)
+2024-06-30 21:43:30.657 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.657 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.658 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.658 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.658 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.658 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.658 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.658 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.659 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.677 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [water] to the wordBank
+2024-06-30 21:43:30.678 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [food] to the wordBank
+2024-06-30 21:43:30.679 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [a] to the wordBank
+2024-06-30 21:43:30.679 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (0)
+2024-06-30 21:43:30.684 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (0:1)
+2024-06-30 21:43:30.684 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.684 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [melon] to the wordBank
+2024-06-30 21:43:30.685 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [b] to the wordBank
+2024-06-30 21:43:30.686 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (1)
+2024-06-30 21:43:30.686 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (1:1)
+2024-06-30 21:43:30.686 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (1)
+2024-06-30 21:43:30.686 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [papaya] to the wordBank
+2024-06-30 21:43:30.686 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [c] to the wordBank
+2024-06-30 21:43:30.686 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (2)
+2024-06-30 21:43:30.686 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (2:1)
+2024-06-30 21:43:30.686 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (2)
+2024-06-30 21:43:30.687 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [banana] to the wordBank
+2024-06-30 21:43:30.687 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [d] to the wordBank
+2024-06-30 21:43:30.687 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (3)
+2024-06-30 21:43:30.687 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (3:1)
+2024-06-30 21:43:30.687 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (3)
+2024-06-30 21:43:30.687 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [fruit] to the wordBank
+2024-06-30 21:43:30.687 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [e] to the wordBank
+2024-06-30 21:43:30.687 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (4)
+2024-06-30 21:43:30.688 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (4:1)
+2024-06-30 21:43:30.688 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (4)
+2024-06-30 21:43:30.688 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [salad] to the wordBank
+2024-06-30 21:43:30.688 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [f] to the wordBank
+2024-06-30 21:43:30.688 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (5)
+2024-06-30 21:43:30.688 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (5:1)
+2024-06-30 21:43:30.688 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (5)
+2024-06-30 21:43:30.688 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [things] to the wordBank
+2024-06-30 21:43:30.689 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [ingredient] to the wordBank
+2024-06-30 21:43:30.689 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [g] to the wordBank
+2024-06-30 21:43:30.689 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (6)
+2024-06-30 21:43:30.689 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (6:1)
+2024-06-30 21:43:30.689 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (6)
+2024-06-30 21:43:30.689 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [mouse] to the wordBank
+2024-06-30 21:43:30.689 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [h] to the wordBank
+2024-06-30 21:43:30.689 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (7)
+2024-06-30 21:43:30.690 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (7:1)
+2024-06-30 21:43:30.690 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (7)
+2024-06-30 21:43:30.690 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [key] to the wordBank
+2024-06-30 21:43:30.690 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [drink] to the wordBank
+2024-06-30 21:43:30.690 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [i] to the wordBank
+2024-06-30 21:43:30.690 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (8)
+2024-06-30 21:43:30.691 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (8:1)
+2024-06-30 21:43:30.691 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (8)
+2024-06-30 21:43:30.693 [main] INFO  org.stratpoint.service.StoreService - Removing Item to the cart (0)
+2024-06-30 21:43:30.693 [main] INFO  org.stratpoint.service.CartService - Removing stock (0)
+2024-06-30 21:43:30.693 [main] INFO  org.stratpoint.service.StoreService - Removing Item to the cart (1)
+2024-06-30 21:43:30.693 [main] INFO  org.stratpoint.service.CartService - Removing stock (1)
+2024-06-30 21:43:30.693 [main] INFO  org.stratpoint.service.StoreService - Removing Item to the cart (2)
+2024-06-30 21:43:30.693 [main] INFO  org.stratpoint.service.CartService - Removing stock (2)
+2024-06-30 21:43:30.693 [main] INFO  org.stratpoint.service.StoreService - Removing Item to the cart (3)
+2024-06-30 21:43:30.693 [main] INFO  org.stratpoint.service.CartService - Removing stock (3)
+2024-06-30 21:43:30.694 [main] INFO  org.stratpoint.service.StoreService - Removing Item to the cart (4)
+2024-06-30 21:43:30.694 [main] INFO  org.stratpoint.service.CartService - Removing stock (4)
+2024-06-30 21:43:30.694 [main] INFO  org.stratpoint.service.StoreService - Removing Item to the cart (5)
+2024-06-30 21:43:30.694 [main] INFO  org.stratpoint.service.CartService - Removing stock (5)
+2024-06-30 21:43:30.694 [main] INFO  org.stratpoint.service.StoreService - Removing Item to the cart (6)
+2024-06-30 21:43:30.694 [main] INFO  org.stratpoint.service.CartService - Removing stock (6)
+2024-06-30 21:43:30.694 [main] INFO  org.stratpoint.service.StoreService - Removing Item to the cart (7)
+2024-06-30 21:43:30.694 [main] INFO  org.stratpoint.service.CartService - Removing stock (7)
+2024-06-30 21:43:30.694 [main] INFO  org.stratpoint.service.StoreService - Removing Item to the cart (8)
+2024-06-30 21:43:30.695 [main] INFO  org.stratpoint.service.CartService - Removing stock (8)
+2024-06-30 21:43:30.700 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [water] to the wordBank
+2024-06-30 21:43:30.701 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [food] to the wordBank
+2024-06-30 21:43:30.701 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [a] to the wordBank
+2024-06-30 21:43:30.701 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (0)
+2024-06-30 21:43:30.701 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (0:1)
+2024-06-30 21:43:30.702 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.702 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [melon] to the wordBank
+2024-06-30 21:43:30.702 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [b] to the wordBank
+2024-06-30 21:43:30.702 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (1)
+2024-06-30 21:43:30.702 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (1:1)
+2024-06-30 21:43:30.703 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (1)
+2024-06-30 21:43:30.703 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [papaya] to the wordBank
+2024-06-30 21:43:30.703 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [c] to the wordBank
+2024-06-30 21:43:30.703 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (2)
+2024-06-30 21:43:30.703 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (2:1)
+2024-06-30 21:43:30.704 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (2)
+2024-06-30 21:43:30.704 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [banana] to the wordBank
+2024-06-30 21:43:30.704 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [d] to the wordBank
+2024-06-30 21:43:30.704 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (3)
+2024-06-30 21:43:30.704 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (3:1)
+2024-06-30 21:43:30.704 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (3)
+2024-06-30 21:43:30.704 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [fruit] to the wordBank
+2024-06-30 21:43:30.705 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [e] to the wordBank
+2024-06-30 21:43:30.705 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (4)
+2024-06-30 21:43:30.705 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (4:1)
+2024-06-30 21:43:30.705 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (4)
+2024-06-30 21:43:30.705 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [salad] to the wordBank
+2024-06-30 21:43:30.706 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [f] to the wordBank
+2024-06-30 21:43:30.706 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (5)
+2024-06-30 21:43:30.706 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (5:1)
+2024-06-30 21:43:30.706 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (5)
+2024-06-30 21:43:30.706 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [things] to the wordBank
+2024-06-30 21:43:30.706 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [ingredient] to the wordBank
+2024-06-30 21:43:30.706 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [g] to the wordBank
+2024-06-30 21:43:30.706 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (6)
+2024-06-30 21:43:30.706 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (6:1)
+2024-06-30 21:43:30.707 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (6)
+2024-06-30 21:43:30.707 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [mouse] to the wordBank
+2024-06-30 21:43:30.707 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [h] to the wordBank
+2024-06-30 21:43:30.707 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (7)
+2024-06-30 21:43:30.707 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (7:1)
+2024-06-30 21:43:30.707 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (7)
+2024-06-30 21:43:30.707 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [key] to the wordBank
+2024-06-30 21:43:30.707 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [drink] to the wordBank
+2024-06-30 21:43:30.707 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [i] to the wordBank
+2024-06-30 21:43:30.708 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (8)
+2024-06-30 21:43:30.708 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (8:1)
+2024-06-30 21:43:30.708 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (8)
+2024-06-30 21:43:30.712 [main] INFO  org.stratpoint.service.StoreService - Search Result with query [water] have 1
+2024-06-30 21:43:30.712 [main] INFO  org.stratpoint.service.StoreService - Search Result with query [WaTeR] have 1
+2024-06-30 21:43:30.712 [main] INFO  org.stratpoint.service.StoreService - Search Result with query [MeLON] have 1
+2024-06-30 21:43:30.713 [main] INFO  org.stratpoint.service.StoreService - Search Result with query [MELON] have 1
+2024-06-30 21:43:30.713 [main] INFO  org.stratpoint.service.StoreService - Search Result with query [papaya] have 1
+2024-06-30 21:43:30.713 [main] INFO  org.stratpoint.service.StoreService - Search Result with query [asdf] is null
+2024-06-30 21:43:30.713 [main] INFO  org.stratpoint.service.StoreService - Search Result with query [1] is null
+2024-06-30 21:43:30.713 [main] INFO  org.stratpoint.service.StoreService - Search Result with query [2] is null
+2024-06-30 21:43:30.713 [main] INFO  org.stratpoint.service.StoreService - Search Result with query [ijwef] is null
+2024-06-30 21:43:30.713 [main] INFO  org.stratpoint.service.StoreService - Search Result with query [FOOD] have 7
+2024-06-30 21:43:30.714 [main] INFO  org.stratpoint.service.StoreService - Search Result with query [food] have 7
+2024-06-30 21:43:30.714 [main] INFO  org.stratpoint.service.StoreService - Search Result with query [ingredient] have 1
+2024-06-30 21:43:30.717 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [water] to the wordBank
+2024-06-30 21:43:30.717 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [food] to the wordBank
+2024-06-30 21:43:30.717 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [a] to the wordBank
+2024-06-30 21:43:30.717 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (0)
+2024-06-30 21:43:30.717 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (0:1)
+2024-06-30 21:43:30.717 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.718 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [melon] to the wordBank
+2024-06-30 21:43:30.718 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [b] to the wordBank
+2024-06-30 21:43:30.718 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (1)
+2024-06-30 21:43:30.718 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (1:1)
+2024-06-30 21:43:30.718 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (1)
+2024-06-30 21:43:30.718 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [papaya] to the wordBank
+2024-06-30 21:43:30.718 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [c] to the wordBank
+2024-06-30 21:43:30.718 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (2)
+2024-06-30 21:43:30.719 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (2:1)
+2024-06-30 21:43:30.719 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (2)
+2024-06-30 21:43:30.719 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [banana] to the wordBank
+2024-06-30 21:43:30.719 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [d] to the wordBank
+2024-06-30 21:43:30.719 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (3)
+2024-06-30 21:43:30.719 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (3:1)
+2024-06-30 21:43:30.719 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (3)
+2024-06-30 21:43:30.719 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [fruit] to the wordBank
+2024-06-30 21:43:30.719 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [e] to the wordBank
+2024-06-30 21:43:30.719 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (4)
+2024-06-30 21:43:30.719 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (4:1)
+2024-06-30 21:43:30.719 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (4)
+2024-06-30 21:43:30.720 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [salad] to the wordBank
+2024-06-30 21:43:30.720 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [f] to the wordBank
+2024-06-30 21:43:30.720 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (5)
+2024-06-30 21:43:30.720 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (5:1)
+2024-06-30 21:43:30.720 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (5)
+2024-06-30 21:43:30.720 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [things] to the wordBank
+2024-06-30 21:43:30.720 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [ingredient] to the wordBank
+2024-06-30 21:43:30.720 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [g] to the wordBank
+2024-06-30 21:43:30.720 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (6)
+2024-06-30 21:43:30.720 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (6:1)
+2024-06-30 21:43:30.720 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (6)
+2024-06-30 21:43:30.720 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [mouse] to the wordBank
+2024-06-30 21:43:30.720 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [h] to the wordBank
+2024-06-30 21:43:30.720 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (7)
+2024-06-30 21:43:30.721 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (7:1)
+2024-06-30 21:43:30.721 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (7)
+2024-06-30 21:43:30.721 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [key] to the wordBank
+2024-06-30 21:43:30.721 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [drink] to the wordBank
+2024-06-30 21:43:30.721 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [i] to the wordBank
+2024-06-30 21:43:30.721 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (8)
+2024-06-30 21:43:30.721 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (8:1)
+2024-06-30 21:43:30.721 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (8)
+2024-06-30 21:43:30.724 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [water] to the wordBank
+2024-06-30 21:43:30.724 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [food] to the wordBank
+2024-06-30 21:43:30.725 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [a] to the wordBank
+2024-06-30 21:43:30.725 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (0)
+2024-06-30 21:43:30.725 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (0:1)
+2024-06-30 21:43:30.725 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (0)
+2024-06-30 21:43:30.725 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [melon] to the wordBank
+2024-06-30 21:43:30.725 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [b] to the wordBank
+2024-06-30 21:43:30.725 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (1)
+2024-06-30 21:43:30.725 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (1:1)
+2024-06-30 21:43:30.725 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (1)
+2024-06-30 21:43:30.726 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [papaya] to the wordBank
+2024-06-30 21:43:30.726 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [c] to the wordBank
+2024-06-30 21:43:30.726 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (2)
+2024-06-30 21:43:30.726 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (2:1)
+2024-06-30 21:43:30.726 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (2)
+2024-06-30 21:43:30.726 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [banana] to the wordBank
+2024-06-30 21:43:30.726 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [d] to the wordBank
+2024-06-30 21:43:30.726 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (3)
+2024-06-30 21:43:30.726 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (3:1)
+2024-06-30 21:43:30.726 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (3)
+2024-06-30 21:43:30.726 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [fruit] to the wordBank
+2024-06-30 21:43:30.726 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [e] to the wordBank
+2024-06-30 21:43:30.726 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (4)
+2024-06-30 21:43:30.726 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (4:1)
+2024-06-30 21:43:30.727 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (4)
+2024-06-30 21:43:30.727 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [salad] to the wordBank
+2024-06-30 21:43:30.727 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [f] to the wordBank
+2024-06-30 21:43:30.727 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (5)
+2024-06-30 21:43:30.727 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (5:1)
+2024-06-30 21:43:30.727 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (5)
+2024-06-30 21:43:30.727 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [things] to the wordBank
+2024-06-30 21:43:30.727 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [ingredient] to the wordBank
+2024-06-30 21:43:30.727 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [g] to the wordBank
+2024-06-30 21:43:30.728 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (6)
+2024-06-30 21:43:30.728 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (6:1)
+2024-06-30 21:43:30.728 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (6)
+2024-06-30 21:43:30.728 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [mouse] to the wordBank
+2024-06-30 21:43:30.728 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [h] to the wordBank
+2024-06-30 21:43:30.728 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (7)
+2024-06-30 21:43:30.728 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (7:1)
+2024-06-30 21:43:30.728 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (7)
+2024-06-30 21:43:30.728 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [key] to the wordBank
+2024-06-30 21:43:30.728 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [drink] to the wordBank
+2024-06-30 21:43:30.728 [main] INFO  org.stratpoint.service.impl.CacheServiceImpl - Added new word [i] to the wordBank
+2024-06-30 21:43:30.728 [main] INFO  org.stratpoint.service.StoreService - Adding values an item to the store (8)
+2024-06-30 21:43:30.728 [main] INFO  org.stratpoint.service.StoreService - Adding an item to the cart (8:1)
+2024-06-30 21:43:30.728 [main] INFO  org.stratpoint.service.CartService - Adding stock with item (8)
