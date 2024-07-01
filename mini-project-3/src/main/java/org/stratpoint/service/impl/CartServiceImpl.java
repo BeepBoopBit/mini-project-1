@@ -99,6 +99,9 @@ public class CartServiceImpl implements CartService {
         }
     }
 
+    /**
+     * Display all the items in the cart with all of their information.
+     */
     public void displayCartItems(){
         cart.forEach(
                 (item, bought) ->{
@@ -112,6 +115,9 @@ public class CartServiceImpl implements CartService {
         );
     }
 
+    /**
+     * Display all the items in the cart with its calculated price.
+     */
     public void displayCheckoutCart(){
         var keys = cart.keySet();
 
@@ -131,6 +137,11 @@ public class CartServiceImpl implements CartService {
         System.out.println("Total: " + total);
     }
 
+    /**
+     * Process the checkout process base on the user money.
+     * @param userMoney The money of the user
+     * @return the change or -1 if it failed
+     */
     public double checkoutCart(double userMoney){
         var keys = cart.keySet();
         double total = 0;

@@ -11,6 +11,9 @@ import org.stratpoint.service.StoreService;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * The type Store service.
+ */
 @Getter @Setter
 public class StoreServiceImpl implements StoreService {
     private final ArrayList<ProductItem> items = new ArrayList<>();
@@ -19,6 +22,9 @@ public class StoreServiceImpl implements StoreService {
     private HashMap<ProductItem, Integer> searchResult = null;
     private final Logger logger = LoggerFactory.getLogger(StoreService.class);
 
+    /**
+     * Instantiates a new Store service.
+     */
     public StoreServiceImpl(){
         this.cache = new CacheServiceImpl<>();
         this.cart = new CartServiceImpl();
@@ -80,7 +86,7 @@ public class StoreServiceImpl implements StoreService {
      * Search for all the products in the query base on all of its attributes
      * @param query: A string of keywords
      * @return the size of the search result
-     * @throws Exception
+     * @throws Exception if there's an input error
      */
     public int search(String query) throws Exception {
         var result = cache.search(query);
@@ -94,6 +100,9 @@ public class StoreServiceImpl implements StoreService {
         return result.size();
     }
 
+    /**
+     * Display all the information of the product;
+     */
     public void displayProducts(){
         for (ProductItem item : items) {
             System.out.println("Product Id: " + item.getId());
@@ -104,6 +113,9 @@ public class StoreServiceImpl implements StoreService {
         }
     }
 
+    /**
+     * Display the product in a minimalistic way for easy menu selection
+     */
     public void displayMinimalProduct(){
         for(int i = 0; i < items.size(); ++i){
             ProductItem item = items.get(i);
@@ -112,6 +124,9 @@ public class StoreServiceImpl implements StoreService {
         }
     }
 
+    /**
+     * Display the result of the search items. Will be called each search query
+     */
     public void displaySearchResult(){
         if(searchResult == null){
             return;
@@ -125,13 +140,16 @@ public class StoreServiceImpl implements StoreService {
         });
     }
 
+    /**
+     * Display all the items in the cart.
+     */
     public void displayCartItems(){
         cart.displayCartItems();
     }
 
     /**
      * Delete at item to the cart if it exists
-     * @param index
+     * @param index the selected item index
      * @return `boolean` if it successfully deleted an item
      */
     public boolean deleteCartItem(int index){
@@ -166,10 +184,18 @@ public class StoreServiceImpl implements StoreService {
         return cart.modifyCartItemStock(items.get(index), value);
     }
 
+    /**
+     * Display the cart items for checkout.
+     */
     public void displayCheckoutCart(){
         cart.displayCheckoutCart();
     }
 
+    /**
+     * Process the checkout process in the cart with the user money.
+     * @param userMoney The amount of money of the user
+     * @return the change or -1 if it fails
+     */
     public double checkoutCart(double userMoney){
         return cart.checkoutCart(userMoney);
     }
