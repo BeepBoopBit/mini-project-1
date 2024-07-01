@@ -16,6 +16,9 @@ class CartServiceImplTest {
 
     @BeforeEach
     void setUp() {
+        cart.getCart().clear();
+        items.clear();
+
         String[] products = {
                 "water", "melon","papaya",
                 "banana", "fruit", "salad",
@@ -93,5 +96,29 @@ class CartServiceImplTest {
             cart.modifyCartItemStock(items.get(i), 1);
             assertEquals(productNewStockValue[i], items.get(i).getStock());
         }
+    }
+
+    @Test
+    void checkoutCart(){
+        double[] prices = {
+                1,2,3,
+                1.1,2.2,3.3,
+                1.4,2.5,3.6,
+        };
+
+        double totalPrices = Arrays.stream(prices).sum();
+        double userMoney = 100;
+        double change = userMoney - totalPrices;
+
+        double cartResult = cart.checkoutCart(userMoney);
+
+        assertEquals(change, cartResult);
+
+        this.setUp();
+
+        userMoney = 10;
+        cartResult = cart.checkoutCart(10);
+        assertEquals(-1, cartResult);
+
     }
 }

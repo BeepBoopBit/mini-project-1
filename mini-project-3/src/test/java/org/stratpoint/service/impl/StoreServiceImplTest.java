@@ -6,6 +6,7 @@ import org.stratpoint.model.ProductItem;
 import org.stratpoint.model.ProductType;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -101,5 +102,28 @@ class StoreServiceImplTest {
 
             assert (!store.checkValidIndexCart(i));
         }
+    }
+
+    @Test
+    void checkoutCart(){
+        double[] prices = {
+                1,2,3,
+                1.1,2.2,3.3,
+                1.4,2.5,3.6,
+        };
+
+        double totalPrices = Arrays.stream(prices).sum();
+        double userMoney = 100;
+        double change = userMoney - totalPrices;
+
+        double cartResult = store.checkoutCart(userMoney);
+
+        assertEquals(change, cartResult);
+
+        this.setUp();
+
+        userMoney = 10;
+        cartResult = store.checkoutCart(10);
+        assertEquals(-1, cartResult);
     }
 }
